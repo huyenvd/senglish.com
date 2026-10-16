@@ -1,0 +1,39 @@
+{
+  "trial_days": 7,
+  "packages": [
+    {
+      "id": "monthly",
+      "type": "monthly",
+      "title": "Premium tháng",
+      "price": "29.000đ",
+      "price_note": "/ tháng, gia hạn tự động",
+      "trial_text": "Dùng thử miễn phí 7 ngày",
+      "features": [
+        "Tắt toàn bộ quảng cáo trong app",
+        "Dùng thử miễn phí 7 ngày trước khi trả phí",
+        "Huỷ bất cứ lúc nào trên App Store / Google Play"
+      ],
+      "badge": "Phổ biến",
+      "highlight": true,
+      "android_product_id": "senglish_premium_monthly",
+      "ios_product_id": "senglish_premium_monthly"
+    },
+    {
+      "id": "lifetime",
+      "type": "lifetime",
+      "title": "Vĩnh viễn",
+      "price": "69.000đ",
+      "price_note": "trả một lần, dùng mãi mãi",
+      "trial_text": "Dùng thử miễn phí 7 ngày",
+      "features": [
+        "Tắt toàn bộ quảng cáo, mãi mãi",
+        "Thanh toán một lần duy nhất",
+        "Mọi tính năng Premium trong tương lai"
+      ],
+      "badge": "Tiết kiệm nhất",
+      "highlight": false,
+      "android_product_id": "senglish_lifetime",
+      "ios_product_id": "senglish_lifetime"
+    }
+  ]
+}
