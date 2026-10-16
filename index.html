@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>S English — Sổ tay từ vựng đa ngôn ngữ</title>
+  <meta name="description" content="S English: sổ tay từ vựng đa ngôn ngữ gọn nhẹ. Ghi từ mới, luyện tập mỗi ngày với 6 chế độ, nhắc học hằng ngày, dùng được cả khi không có mạng." />
+  <style>
+    :root {
+      --teal-dark: #0F766E;
+      --teal: #14B8A6;
+      --teal-light: #2DD4BF;
+      --ink: #0F172A;
+      --muted: #64748B;
+      --bg: #F4F7F6;
+      --card: #FFFFFF;
+      --radius: 16px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        "Helvetica Neue", Arial, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+    a { text-decoration: none; }
+    .wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+
+    /* ---------- Nav ---------- */
+    nav {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(255, 255, 255, .92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid #E2E8F0;
+    }
+    nav .wrap {
+      display: flex; align-items: center; gap: 24px;
+      height: 62px;
+    }
+    .brand { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 20px; color: var(--teal-dark); }
+    .brand .logo {
+      width: 36px; height: 36px; border-radius: 12px;
+      background: linear-gradient(135deg, var(--teal-light), var(--teal-dark));
+      display: flex; align-items: center; justify-content: center;
+      color: #fff; font-size: 20px; font-weight: 800;
+    }
+    nav .links { margin-left: auto; display: flex; gap: 20px; font-size: 15px; }
+    nav .links a { color: var(--muted); font-weight: 600; }
+    nav .links a:hover { color: var(--teal-dark); }
+    @media (max-width: 640px) { nav .links a.hide-sm { display: none; } }
+
+    /* ---------- Hero ---------- */
+    .hero {
+      background: linear-gradient(135deg, var(--teal-light), var(--teal-dark));
+      color: #fff; overflow: hidden;
+    }
+    .hero .wrap {
+      display: grid; grid-template-columns: 1.2fr .8fr; gap: 32px;
+      padding: 64px 20px 72px; align-items: center;
+    }
+    @media (max-width: 760px) { .hero .wrap { grid-template-columns: 1fr; } }
+    .badge {
+      display: inline-block; font-size: 13px; font-weight: 700;
+      background: rgba(255,255,255,.2); border: 1px solid rgba(255,255,255,.45);
+      padding: 6px 14px; border-radius: 999px; margin-bottom: 16px;
+    }
+    .hero h1 { font-size: clamp(30px, 5vw, 48px); line-height: 1.15; font-weight: 800; }
+    .hero p.sub { margin: 16px 0 28px; font-size: 18px; opacity: .95; max-width: 520px; }
+    .cta-row { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 13px 24px; border-radius: 12px; font-weight: 700; font-size: 16px;
+    }
+    .btn-light { background: #fff; color: var(--teal-dark); }
+    .btn-outline { border: 2px solid rgba(255,255,255,.7); color: #fff; }
+    .hero-stats { display: flex; gap: 28px; margin-top: 32px; flex-wrap: wrap; }
+    .hero-stats div strong { display: block; font-size: 26px; }
+    .hero-stats div span { font-size: 14px; opacity: .85; }
+    .phone {
+      justify-self: center;
+      width: 230px; height: 470px; background: #0B1F1D;
+      border-radius: 38px; padding: 12px;
+      box-shadow: 0 30px 60px rgba(0,0,0,.35);
+    }
+    .phone .screen {
+      background: #fff; border-radius: 28px; height: 100%;
+      padding: 22px 16px; color: var(--ink); overflow: hidden;
+    }
+    .phone .app-title { font-weight: 800; color: var(--teal-dark); font-size: 15px; }
+    .phone .word-card {
+      margin-top: 14px; background: var(--bg); border-radius: 12px; padding: 12px;
+      border: 1px solid #E2E8F0;
+    }
+    .phone .word-card b { color: var(--teal-dark); font-size: 19px; }
+    .phone .word-card small { color: var(--muted); display: block; }
+    .phone .opt {
+      margin-top: 10px; border-radius: 10px; padding: 9px 12px; font-size: 13px;
+      border: 1.5px solid #E2E8F0; font-weight: 600;
+    }
+    .phone .opt.ok { border-color: #16A34A; background: #DCFCE7; color: #15803D; }
+    @media (max-width: 760px) { .phone { display: none; } }
+
+    /* ---------- Sections ---------- */
+    section { padding: 64px 0; }
+    section h2 { font-size: clamp(24px, 4vw, 34px); font-weight: 800; text-align: center; }
+    section p.lead { text-align: center; color: var(--muted); max-width: 640px; margin: 12px auto 36px; font-size: 17px; }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    @media (max-width: 860px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 560px) { .grid { grid-template-columns: 1fr; } }
+    .card {
+      background: var(--card); border: 1px solid #E1E8E5; border-radius: var(--radius);
+      padding: 24px 20px;
+    }
+    .card .icon {
+      width: 46px; height: 46px; border-radius: 14px; font-size: 23px;
+      background: #CCFBF1; display: flex; align-items: center; justify-content: center;
+      margin-bottom: 14px;
+    }
+    .card h3 { font-size: 17px; margin-bottom: 6px; }
+    .card p { font-size: 14.5px; color: var(--muted); }
+
+    /* ---------- Download ---------- */
+    #tai-ung-dung { background: #0B1F1D; color: #fff; }
+    #tai-ung-dung h2 { color: #fff; }
+    #tai-ung-dung p.lead { color: #A7F3D0; }
+    .dl-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; max-width: 760px; margin: 0 auto; }
+    @media (max-width: 620px) { .dl-grid { grid-template-columns: 1fr; } }
+    .dl-card {
+      background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.16);
+      border-radius: var(--radius); padding: 28px 24px; text-align: center;
+    }
+    .dl-card h3 { font-size: 20px; margin-bottom: 4px; }
+    .dl-card p { color: #A7F3D0; font-size: 14px; margin-bottom: 18px; }
+    .dl-card img.qr {
+      width: 170px; height: 170px; border-radius: 12px; background: #fff; padding: 6px;
+    }
+    .dl-card .btn { margin-top: 18px; width: 100%; justify-content: center; }
+    .dl-note { text-align: center; color: #A7F3D0; font-size: 14px; margin-top: 24px; }
+
+    /* ---------- About / footer ---------- */
+    #ve-chung-toi .about-card {
+      background: var(--card); border: 1px solid #E1E8E5; border-radius: var(--radius);
+      padding: 32px; max-width: 760px; margin: 0 auto; font-size: 16.5px; color: #334155;
+    }
+    #ve-chung-toi .about-card p + p { margin-top: 14px; }
+    footer { border-top: 1px solid #E2E8F0; padding: 28px 0 40px; color: var(--muted); font-size: 14px; }
+    footer .wrap { display: flex; gap: 18px; flex-wrap: wrap; align-items: center; }
+    footer a { color: var(--teal-dark); font-weight: 600; }
+    footer .right { margin-left: auto; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="./"><span class="logo">S</span> S English</a>
+    <div class="links">
+      <a href="#tinh-nang">Tính năng</a>
+      <a href="#tai-ung-dung">Tải ứng dụng</a>
+      <a href="#ve-chung-toi" class="hide-sm">Về chúng tôi</a>
+      <a href="privacy.html">Chính sách</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <span class="badge">Miễn phí &bull; Không cần tài khoản &bull; Dùng offline</span>
+      <h1>Sổ tay từ vựng đa ngôn ngữ của riêng bạn</h1>
+      <p class="sub">Ghi lại từ mới, luyện tập mỗi ngày với 6 chế độ thú vị và nhớ từ lâu hơn — tất cả trong một ứng dụng gọn nhẹ.</p>
+      <div class="cta-row">
+        <a class="btn btn-light" href="#tai-ung-dung">&#8681; Tải ứng dụng miễn phí</a>
+        <a class="btn btn-outline" href="#tinh-nang">Khám phá tính năng</a>
+      </div>
+      <div class="hero-stats">
+        <div><strong>6</strong><span>chế độ luyện tập</span></div>
+        <div><strong>5+</strong><span>ngôn ngữ (Anh, Nhật, Hàn, Trung...)</span></div>
+        <div><strong>100%</strong><span>offline cho sổ từ của bạn</span></div>
+      </div>
+    </div>
+    <div class="phone" aria-hidden="true">
+      <div class="screen">
+        <div class="app-title">Trắc nghiệm nghĩa</div>
+        <div class="word-card">
+          <b>improve</b>
+          <small>/ɪmˈpruːv/ — chọn nghĩa đúng của từ</small>
+        </div>
+        <div class="opt ok">✓ cải thiện, nâng cao</div>
+        <div class="opt">✗ du lịch</div>
+        <div class="opt">✗ xin chào</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="tinh-nang">
+  <div class="wrap">
+    <h2>6 cách luyện, đổi qua đổi lại cho đỡ nhàm chán</h2>
+    <p class="lead">Mỗi lượt trả lời đều được ghi lại, ứng dụng biết chính xác từ nào bạn còn yếu để ôn đúng chỗ.</p>
+    <div class="grid">
+      <div class="card"><div class="icon">✅</div><h3>Trắc nghiệm nghĩa</h3><p>Chọn nghĩa đúng trong 4 đáp án, có tłum điểm ngay sau mỗi câu.</p></div>
+      <div class="card"><div class="icon">🔤</div><h3>Điền chữ cái còn thiếu</h3><p>Chạy đua với đồng hồ, chạm chữ để điền, chạm lại để trả chữ về khay.</p></div>
+      <div class="card"><div class="icon">🔗</div><h3>Nối từ với nghĩa</h3><p>Ghép 6 cặp từ – nghĩa trong một lượt, chọn sai sẽ rung lắc cảnh báo.</p></div>
+      <div class="card"><div class="icon">⌨️</div><h3>Gõ nghĩa &amp; gõ từ</h3><p>Nhìn từ gõ nghĩa, nhìn nghĩa gõ từ — rèn cả hai chiều ghi nhớ.</p></div>
+      <div class="card"><div class="icon">🎧</div><h3>Nghe &amp; gõ từ</h3><p>Nghe phát âm chuẩn rồi gõ lại, luyện cả tai lẫn tay.</p></div>
+      <div class="card"><div class="icon">🎯</div><h3>Tự chọn từ để ôn</h3><p>Tick chọn những từ chưa thuộc thành danh sách và ôn ngay trong 6 chế độ.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="tinh-nang-2" style="padding-top:0">
+  <div class="wrap">
+    <h2>Người bạn đồng hành mỗi ngày</h2>
+    <p class="lead">Không chỉ là sổ từ — S English giúp bạn duy trì thói quen học đều đặn.</p>
+    <div class="grid">
+      <div class="card"><div class="icon">📚</div><h3>Sổ từ đa ngôn ngữ</h3><p>Thêm từ thủ công với phiên âm tự động (IPA, Romaji, Pinyin) hoặc nhập hàng loạt từ file Excel.</p></div>
+      <div class="card"><div class="icon">🔍</div><h3>Tra từ ngay trong app</h3><p>Gặp từ lạ? Tra phiên âm, nghĩa và ví dụ rồi thêm vào sổ chỉ với một chạm.</p></div>
+      <div class="card"><div class="icon">⏰</div><h3>Nhắc học hằng ngày</h3><p>Đặt chỉ tiêu số từ mỗi ngày, app nhắc bạn qua thông báo vào đúng giờ đã chọn.</p></div>
+      <div class="card"><div class="icon">📊</div><h3>Thống kê tiến bộ</h3><p>Theo dõi từ đã học, từ hay sai và kiểm tra lại riêng các từ từng trả lời sai.</p></div>
+      <div class="card"><div class="icon">🔊</div><h3>Âm thanh &amp; rung</h3><p>Âm báo đúng/sai, rung khi sai, tự động phát âm từ — tất cả đều bật/tắt được trong Cài đặt.</p></div>
+      <div class="card"><div class="icon">📴</div><h3>Dùng offline</h3><p>Sổ từ của bạn lưu ngay trên máy, không cần đăng nhập, không cần mạng vẫn học được.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="tai-ung-dung">
+  <div class="wrap">
+    <h2>Tải S English miễn phí</h2>
+    <p class="lead">Quét mã QR bằng camera điện thoại, hoặc bấm nút để tới cửa hàng ứng dụng.</p>
+    <div class="dl-grid">
+      <div class="dl-card">
+        <h3>🤖 Android</h3>
+        <p>Tải trên Google Play</p>
+        <!-- TODO: thay assets/qr-android.png bằng QR của link Google Play thật -->
+        <img class="qr" src="assets/qr-android.png" alt="QR tải S English cho Android" />
+        <br />
+        <!-- TODO: dán link Google Play thật vào href bên dưới -->
+        <a class="btn btn-light" href="https://play.google.com/store/apps/details?id=com.english.free.my_app">Tải cho Android</a>
+      </div>
+      <div class="dl-card">
+        <h3>🍎 iPhone / iPad</h3>
+        <p>Tải trên App Store</p>
+        <!-- TODO: thay assets/qr-ios.png bằng QR của link App Store thật -->
+        <img class="qr" src="assets/qr-ios.png" alt="QR tải S English cho iOS" />
+        <br />
+        <!-- TODO: dán link App Store thật vào href bên dưới -->
+        <a class="btn btn-light" href="#">Tải cho iPhone</a>
+      </div>
+    </div>
+    <p class="dl-note">Mẹo: mở trang này trên điện thoại rồi bấm nút tải — không cần quét QR.</p>
+  </div>
+</section>
+
+<section id="ve-chung-toi">
+  <div class="wrap">
+    <h2>Về chúng tôi</h2>
+    <p class="lead">Đội ngũ nhỏ, tình yêu lớn với việc học ngoại ngữ.</p>
+    <div class="about-card">
+      <p><strong>S English</strong> được phát triển bởi một nhóm nhỏ những người từng chật vật với việc học từ vựng: ghi chép thì nhanh quên, app thì nặng nề và bắt đăng nhập đủ thứ. Chúng tôi muốn một cuốn sổ từ đơn giản — mở lên là học được ngay, nhắc mình học mỗi ngày, và cho biết rõ mình yếu ở đâu.</p>
+      <p>Mọi góp ý, báo lỗi hay đề xuất tính năng mới đều rất quý với chúng tôi. Hãy liên hệ qua email <strong><a href="mailto:support@senglish.app">support@senglish.app</a></strong> <!-- TODO: thay bằng email liên hệ thật --> — chúng tôi đọc mọi thư và trả lời sớm nhất có thể.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 S English</span>
+    <a href="privacy.html">Chính sách &amp; quyền riêng tư</a>
+    <a href="api/config.json">Cấu hình ứng dụng (JSON)</a>
+    <span class="right">Học một chút mỗi ngày 🌱</span>
+  </div>
+</footer>
+
+</body>
+</html>
