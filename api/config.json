@@ -2,6 +2,8 @@
   "ads_enabled": true,
   "banner_enabled": true,
   "interstitial_enabled": true,
+  "banner_min_opens": 6,
+  "app_open_frequency": 20,
   "min_version_android": "1.0.0",
   "min_version_ios": "1.0.0",
   "force_update_android": false,
