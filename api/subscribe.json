@@ -16,15 +16,15 @@
       "badge": "Phổ biến",
       "highlight": true,
       "android_product_id": "senglish_premium_monthly",
-      "ios_product_id": "senglish_premium_monthly"
+      "ios_product_id": "senglish_monthly"
     },
     {
       "id": "lifetime",
       "type": "lifetime",
       "title": "Vĩnh viễn",
-      "price": "69.000đ",
+      "price": "59.000đ",
       "price_note": "trả một lần, dùng mãi mãi",
-      "trial_text": "Dùng thử miễn phí 7 ngày",
+      "trial_text": "",
       "features": [
         "Tắt toàn bộ quảng cáo, mãi mãi",
         "Thanh toán một lần duy nhất",
