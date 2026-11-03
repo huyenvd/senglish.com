@@ -1,0 +1,37 @@
+# ==============================================================================
+# S English - Apache / LiteSpeed Web Server Security Configuration
+# ==============================================================================
+
+# 1. Chống duyệt danh mục thư mục (Directory Browsing)
+Options -Indexes
+
+# 2. Chặn truy cập trực tiếp các file ẩn (.git, .env, .DS_Store,...)
+<FilesMatch "^\.">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# 3. Chặn truy cập file tài liệu nội bộ
+<FilesMatch "^(README\.md|LICENSE|\.gitignore)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# 4. Bảo mật HTTP Headers (chống Clickjacking, MIME sniffing, v.v.)
+<IfModule mod_headers.c>
+    # Chống clickjacking - không cho nhúng website vào iframe của trang lạ
+    Header set X-Frame-Options "SAMEORIGIN"
+
+    # Chống MIME-sniffing
+    Header set X-Content-Type-Options "nosniff"
+
+    # Chính sách Referrer bảo mật
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+
+    # Giới hạn quyền truy cập thiết bị từ trình duyệt
+    Header set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+</IfModule>
+
+# 5. Tùy chỉnh trang báo lỗi 404
+ErrorDocument 404 /404.html
+

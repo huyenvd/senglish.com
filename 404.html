@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="robots" content="noindex, nofollow, noarchive" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <title>404 — Không tìm thấy trang | S English</title>
+  <style>
+    :root {
+      --teal-dark: #0F766E;
+      --teal-light: #2DD4BF;
+      --ink: #0F172A;
+      --muted: #5E6C7C;
+      --bg: #F4F7F6;
+      --card: #FFFFFF;
+      --radius: 16px;
+      --shadow-sm: 0 4px 20px rgba(15, 23, 42, 0.08);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.6;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 20px;
+      text-align: center;
+    }
+    .card {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: clamp(32px, 6vw, 48px) 24px;
+      box-shadow: var(--shadow-sm);
+      max-width: 480px;
+      width: 100%;
+      border: 1px solid #E1E8E5;
+    }
+    .badge {
+      display: inline-block;
+      background: rgba(15, 118, 110, 0.1);
+      color: var(--teal-dark);
+      font-weight: 800;
+      font-size: 14px;
+      padding: 4px 12px;
+      border-radius: 99px;
+      margin-bottom: 16px;
+    }
+    h1 {
+      font-size: clamp(36px, 8vw, 56px);
+      font-weight: 800;
+      color: var(--teal-dark);
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+    h2 {
+      font-size: 20px;
+      color: var(--ink);
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+    p {
+      color: var(--muted);
+      font-size: 15px;
+      margin-bottom: 24px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: var(--teal-dark);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 12px 24px;
+      border-radius: 10px;
+      transition: opacity 0.2s;
+    }
+    .btn:hover {
+      opacity: 0.9;
+    }
+    .countdown {
+      margin-top: 18px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <span class="badge">Lỗi 404</span>
+    <h1>404</h1>
+    <h2>Không tìm thấy trang</h2>
+    <p>Địa chỉ bạn truy cập không tồn tại hoặc đã được di chuyển. Hệ thống sẽ tự động đưa bạn về trang chủ.</p>
+    <a class="btn" id="homeLink" href="./">&#8592; Về trang chủ ngay</a>
+    <div class="countdown" id="cdText">Tự động chuyển hướng sau 3 giây...</div>
+  </div>
+
+  <script>
+    (function () {
+      var pathParts = window.location.pathname.split('/').filter(Boolean);
+      var homeUrl = '/';
+      if (pathParts.length > 0 && window.location.hostname.endsWith('github.io')) {
+        homeUrl = '/' + pathParts[0] + '/';
+      }
+      var link = document.getElementById('homeLink');
+      if (link) link.href = homeUrl;
+
+      var seconds = 3;
+      var cdText = document.getElementById('cdText');
+      var interval = setInterval(function () {
+        seconds--;
+        if (cdText && seconds > 0) {
+          cdText.textContent = 'Tự động chuyển hướng sau ' + seconds + ' giây...';
+        }
+        if (seconds <= 0) {
+          clearInterval(interval);
+          window.location.replace(homeUrl);
+        }
+      }, 1000);
+    })();
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,16 @@
+# S English - Robots Configuration
+# https://senglish.com
+
+User-agent: *
+# Cho phép thu thập dữ liệu trang chủ và các trang công khai
+Allow: /
+Allow: /index.html
+Allow: /privacy.html
+Allow: /assets/
+
+# Chặn bot và công cụ tìm kiếm cào dữ liệu api nội bộ và file nhạy cảm
+Disallow: /api/
+Disallow: /.git/
+Disallow: /README.md
+Disallow: /404.html
+
