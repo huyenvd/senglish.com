@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Hướng dẫn sử dụng chi tiết — SEnglish Sổ tay từ vựng</title>
+  <meta name="description" content="Hướng dẫn chi tiết từng bước sử dụng app SEnglish kèm ảnh chụp thực tế: cài đặt tự động qua màn, hiển thị nút Tiếp theo, bật nhắc học thông báo, đổi ngôn ngữ học..." />
+  <meta name="theme-color" content="#0F766E" />
+  <meta property="og:title" content="Hướng dẫn sử dụng chi tiết — SEnglish" />
+  <meta property="og:description" content="Hướng dẫn từng bước cách sử dụng các tính năng nổi bật của app SEnglish kèm ảnh chụp thực tế trên điện thoại." />
+  <meta property="og:type" content="article" />
+  <style>
+    :root {
+      --teal-dark: #0F766E;
+      --teal: #14B8A6;
+      --teal-light: #2DD4BF;
+      --teal-soft: #CCFBF1;
+      --ink: #0F172A;
+      --ink-2: #334155;
+      --muted: #5E6C7C;
+      --bg: #F4F7F6;
+      --card: #FFFFFF;
+      --line: #E2E8F0;
+      --line-strong: #CBD5E1;
+      --radius: 16px;
+      --radius-lg: 22px;
+      --shadow-sm: 0 2px 10px rgba(15, 23, 42, .05);
+      --shadow-md: 0 14px 34px -18px rgba(15, 23, 42, .25);
+      --shadow-lg: 0 26px 54px -20px rgba(11, 31, 29, .35);
+      --nav-h: 64px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: calc(var(--nav-h) + 60px);
+      -webkit-text-size-adjust: 100%;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; display: block; height: auto; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    :focus-visible {
+      outline: 3px solid var(--teal);
+      outline-offset: 3px;
+      border-radius: 8px;
+    }
+    .wrap { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+    /* ---------- Navigation ---------- */
+    nav {
+      position: sticky; top: 0; z-index: 60;
+      background: rgba(255, 255, 255, .92);
+      backdrop-filter: blur(12px) saturate(1.3);
+      -webkit-backdrop-filter: blur(12px) saturate(1.3);
+      border-bottom: 1px solid var(--line);
+    }
+    nav .wrap {
+      display: flex; align-items: center; gap: 12px;
+      min-height: var(--nav-h);
+    }
+    .brand {
+      display: flex; align-items: center; gap: 10px;
+      font-weight: 800; font-size: 19px; color: var(--teal-dark);
+      letter-spacing: -.01em;
+    }
+    .brand .logo {
+      width: 38px; height: 38px; border-radius: 12px;
+      background: linear-gradient(135deg, var(--teal-light), var(--teal-dark));
+      display: flex; align-items: center; justify-content: center;
+      color: #fff; font-size: 20px; font-weight: 800;
+      box-shadow: 0 8px 18px -10px rgba(15, 118, 110, .9);
+      flex: none;
+    }
+    nav .links {
+      margin-left: auto;
+      display: flex; align-items: center; gap: 4px;
+    }
+    nav .links a {
+      color: var(--muted); font-weight: 600; font-size: 15px;
+      padding: 9px 13px; border-radius: 10px;
+      transition: color .18s ease, background-color .18s ease;
+      white-space: nowrap;
+    }
+    nav .links a:hover { color: var(--teal-dark); background: #ECFDF5; }
+    nav .links a.is-active { color: var(--teal-dark); background: var(--teal-soft); font-weight: 700; }
+    nav .links .nav-cta {
+      margin-left: 6px;
+      background: var(--teal-dark); color: #fff;
+      padding: 10px 18px; border-radius: 12px;
+      box-shadow: 0 10px 20px -12px rgba(15, 118, 110, .95);
+    }
+    nav .links .nav-cta:hover { background: #115E59; color: #fff; }
+
+    .nav-toggle {
+      display: none;
+      margin-left: auto;
+      width: 44px; height: 44px;
+      border: 1px solid var(--line); background: #fff;
+      border-radius: 12px; cursor: pointer;
+      flex-direction: column; align-items: center; justify-content: center; gap: 5px;
+    }
+    .nav-toggle span {
+      display: block; width: 19px; height: 2px; border-radius: 2px;
+      background: var(--ink); transition: transform .25s ease, opacity .2s ease;
+    }
+    .nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+    .nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    @media (max-width: 900px) {
+      .nav-toggle { display: flex; }
+      nav .links {
+        display: none;
+        position: absolute; top: 100%; left: 0; right: 0;
+        flex-direction: column; align-items: stretch; gap: 4px;
+        margin: 0; padding: 12px 16px 20px;
+        background: rgba(255, 255, 255, .98);
+        border-bottom: 1px solid var(--line);
+        box-shadow: 0 24px 40px -26px rgba(15, 23, 42, .5);
+      }
+      nav .links.open { display: flex; }
+      nav .links a {
+        padding: 12px 14px; font-size: 16px; border-bottom: 1px solid #F1F5F9;
+      }
+      nav .links a:last-child { border-bottom: 0; }
+      nav .links .nav-cta { margin: 10px 0 0; text-align: center; }
+    }
+
+    /* ---------- Sticky Feature Quick-Nav Bar ---------- */
+    .feature-subnav {
+      position: sticky; top: var(--nav-h); z-index: 55;
+      background: #FFFFFF;
+      border-bottom: 1px solid var(--line);
+      box-shadow: 0 4px 14px -6px rgba(15, 23, 42, .06);
+    }
+    .feature-subnav .wrap {
+      display: flex; gap: 8px; overflow-x: auto;
+      padding: 10px 20px; scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+    }
+    .feature-subnav .wrap::-webkit-scrollbar { display: none; }
+    .subnav-chip {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 13.5px; font-weight: 700;
+      padding: 8px 14px; border-radius: 999px;
+      background: #F1F5F9; color: var(--ink-2);
+      border: 1px solid var(--line);
+      white-space: nowrap; transition: all .18s ease;
+      flex: none;
+    }
+    .subnav-chip:hover {
+      background: #E6FBF7; color: var(--teal-dark); border-color: var(--teal-light);
+    }
+
+    /* ---------- Hero Banner ---------- */
+    .guide-hero {
+      background:
+        radial-gradient(900px 420px at 85% -15%, rgba(45, 212, 191, .4), transparent 70%),
+        radial-gradient(700px 380px at 0% 110%, rgba(13, 148, 136, .5), transparent 70%),
+        linear-gradient(140deg, #0F766E 0%, #0D5F59 55%, #0B3B38 100%);
+      color: #fff; padding: clamp(40px, 6vw, 68px) 0 clamp(44px, 7vw, 72px);
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 12.5px; font-weight: 700; letter-spacing: .04em;
+      background: rgba(255,255,255,.16); border: 1px solid rgba(255,255,255,.35);
+      padding: 6px 14px; border-radius: 999px; margin-bottom: 16px;
+      text-transform: uppercase;
+    }
+    .guide-hero h1 {
+      font-size: clamp(28px, 5.2vw, 44px); font-weight: 800; line-height: 1.2;
+      letter-spacing: -.02em; max-width: 820px;
+    }
+    .guide-hero p.lead {
+      margin-top: 14px; font-size: clamp(16px, 2vw, 18px); opacity: .92;
+      max-width: 740px; line-height: 1.6;
+    }
+    .device-note {
+      display: inline-flex; align-items: center; gap: 8px; margin-top: 20px;
+      padding: 8px 14px; border-radius: 10px; background: rgba(0,0,0,.25);
+      border: 1px solid rgba(255,255,255,.2); font-size: 13.5px; color: #CCFBF1;
+    }
+
+    /* ---------- Main Guide Sections ---------- */
+    .guide-section {
+      padding: clamp(44px, 6vw, 64px) 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .guide-section:last-of-type { border-bottom: 0; }
+    .section-header {
+      margin-bottom: 30px;
+    }
+    .section-header .tag {
+      display: inline-block; font-size: 12px; font-weight: 800;
+      text-transform: uppercase; letter-spacing: .06em;
+      color: var(--teal-dark); background: var(--teal-soft);
+      padding: 4px 10px; border-radius: 6px; margin-bottom: 8px;
+    }
+    .section-header h2 {
+      font-size: clamp(24px, 4vw, 32px); font-weight: 800;
+      letter-spacing: -.02em; color: var(--ink); line-height: 1.25;
+    }
+    .section-header p {
+      font-size: 16px; color: var(--muted); margin-top: 8px; max-width: 760px;
+    }
+
+    /* Step Card Grid */
+    .steps-grid {
+      display: grid; gap: 24px;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      margin-bottom: 32px;
+    }
+    .step-card {
+      background: var(--card); border: 1px solid #E1E8E5; border-radius: var(--radius);
+      padding: 22px; box-shadow: var(--shadow-sm);
+      display: flex; flex-direction: column;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .step-card:hover {
+      transform: translateY(-3px); box-shadow: var(--shadow-md);
+      border-color: #CBE9E4;
+    }
+    .step-badge {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 32px; height: 32px; border-radius: 50%;
+      background: var(--teal-dark); color: #fff; font-weight: 800; font-size: 15px;
+      margin-bottom: 12px; flex: none;
+    }
+    .step-card h3 {
+      font-size: 17.5px; font-weight: 700; color: var(--ink); margin-bottom: 8px;
+    }
+    .step-card p {
+      font-size: 14.5px; color: var(--ink-2); line-height: 1.55; margin-bottom: 16px;
+      flex: 1;
+    }
+
+    /* Screenshot Mockup Container */
+    .screenshot-frame {
+      position: relative; border-radius: 16px; overflow: hidden;
+      background: #0B1F1D; border: 2px solid #CBD5E1;
+      box-shadow: 0 10px 24px -10px rgba(15, 23, 42, .3);
+      cursor: zoom-in;
+    }
+    .screenshot-frame img {
+      width: 100%; height: auto; display: block;
+      transition: transform .3s ease;
+    }
+    .screenshot-frame:hover img {
+      transform: scale(1.02);
+    }
+    .zoom-hint {
+      position: absolute; right: 10px; bottom: 10px;
+      background: rgba(0, 0, 0, .75); color: #fff;
+      font-size: 11.5px; font-weight: 600; padding: 4px 8px;
+      border-radius: 6px; display: flex; align-items: center; gap: 4px;
+      pointer-events: none; backdrop-filter: blur(4px);
+    }
+    .screenshot-caption {
+      margin-top: 8px; font-size: 12.5px; color: var(--muted);
+      text-align: center; font-style: italic;
+    }
+
+    /* Comparison Box (Side by side Auto vs Manual) */
+    .compare-container {
+      background: #FFFFFF; border: 1px solid var(--line); border-radius: var(--radius-lg);
+      padding: clamp(20px, 3.5vw, 32px); box-shadow: var(--shadow-sm);
+      margin-top: 24px;
+    }
+    .compare-title {
+      font-size: 20px; font-weight: 800; margin-bottom: 6px; color: var(--ink);
+    }
+    .compare-lead {
+      font-size: 14.5px; color: var(--muted); margin-bottom: 22px;
+    }
+    .compare-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 24px;
+    }
+    @media (max-width: 820px) {
+      .compare-grid { grid-template-columns: 1fr; }
+    }
+    .compare-col {
+      border-radius: var(--radius); padding: 18px;
+      display: flex; flex-direction: column;
+    }
+    .compare-col.auto-mode {
+      background: #F0FDF4; border: 1.5px solid #86EFAC;
+    }
+    .compare-col.manual-mode {
+      background: #F0FDFA; border: 1.5px solid #5EEAD4;
+    }
+    .compare-tag {
+      display: inline-block; font-size: 11.5px; font-weight: 800;
+      text-transform: uppercase; letter-spacing: .05em; padding: 4px 10px;
+      border-radius: 6px; margin-bottom: 10px; align-self: flex-start;
+    }
+    .auto-mode .compare-tag { background: #DCFCE7; color: #166534; }
+    .manual-mode .compare-tag { background: #CCFBF1; color: #115E59; }
+    .compare-col h4 {
+      font-size: 17px; font-weight: 700; margin-bottom: 6px; color: var(--ink);
+    }
+    .compare-col ul {
+      margin: 10px 0 16px; font-size: 13.5px; color: var(--ink-2);
+      display: flex; flex-direction: column; gap: 6px;
+    }
+    .compare-col li {
+      position: relative; padding-left: 18px; line-height: 1.5;
+    }
+    .compare-col li::before {
+      content: "✔"; position: absolute; left: 0; font-weight: bold;
+    }
+    .auto-mode li::before { color: #16A34A; }
+    .manual-mode li::before { color: var(--teal-dark); }
+
+    /* Notification Preview Card */
+    .notif-box {
+      background: #FFFFFF; border: 1px solid var(--line); border-radius: var(--radius);
+      padding: 20px; box-shadow: var(--shadow-sm); max-width: 600px; margin: 18px 0;
+    }
+    .notif-header {
+      display: flex; align-items: center; gap: 10px; margin-bottom: 12px;
+    }
+    .notif-icon {
+      width: 32px; height: 32px; border-radius: 8px; background: #FEF3C7;
+      display: flex; align-items: center; justify-content: center; font-size: 16px;
+    }
+    .notif-title { font-weight: 700; font-size: 14.5px; color: var(--ink); }
+    .notif-sub { font-size: 12px; color: var(--muted); }
+    .notif-body {
+      background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 10px;
+      padding: 12px 14px; font-size: 14px; font-weight: 600; color: #0F172A;
+    }
+
+    /* Tip callout box */
+    .tip-box {
+      margin-top: 24px; padding: 16px 20px; border-radius: var(--radius);
+      background: #EFF6FF; border: 1px solid #BFDBFE; color: #1E40AF;
+      font-size: 14px; line-height: 1.55; display: flex; gap: 12px; align-items: flex-start;
+    }
+    .tip-box .tip-icon { font-size: 20px; flex: none; }
+
+    /* Features List Table / Pills */
+    .modes-list {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px; margin: 20px 0;
+    }
+    .mode-item {
+      background: #FFFFFF; border: 1px solid var(--line); border-radius: 12px;
+      padding: 14px 16px; display: flex; gap: 12px; align-items: flex-start;
+    }
+    .mode-item .num {
+      width: 26px; height: 26px; border-radius: 8px; background: var(--teal-soft);
+      color: var(--teal-dark); font-weight: 800; font-size: 13px;
+      display: flex; align-items: center; justify-content: center; flex: none;
+    }
+    .mode-item strong { display: block; font-size: 15px; color: var(--ink); margin-bottom: 2px; }
+    .mode-item span { font-size: 13px; color: var(--muted); }
+
+    /* Modal / Lightbox for viewing screenshot in high-res */
+    .modal-overlay {
+      position: fixed; inset: 0; z-index: 100;
+      background: rgba(15, 23, 42, .88); backdrop-filter: blur(8px);
+      display: none; align-items: center; justify-content: center; padding: 20px;
+      cursor: zoom-out;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      max-width: 90vw; max-height: 90vh; border-radius: 16px; overflow: hidden;
+      box-shadow: 0 24px 60px rgba(0,0,0,.6); position: relative;
+      background: #000;
+    }
+    .modal-content img {
+      max-width: 100%; max-height: 85vh; object-fit: contain; margin: 0 auto;
+    }
+    .modal-caption {
+      background: rgba(0,0,0,.85); color: #fff; padding: 12px 18px;
+      font-size: 14px; text-align: center;
+    }
+    .modal-close {
+      position: absolute; top: 12px; right: 12px; width: 36px; height: 36px;
+      border-radius: 50%; background: rgba(0,0,0,.6); color: #fff;
+      border: 1px solid rgba(255,255,255,.3); font-size: 18px; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+    }
+
+    /* Footer */
+    footer { border-top: 1px solid var(--line); padding: 30px 0 44px; color: var(--muted); font-size: 14px; background: #fff; }
+    footer .wrap { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+    footer a { color: var(--teal-dark); font-weight: 600; }
+    footer .right { margin-left: auto; }
+    @media (max-width: 560px) {
+      footer .wrap { flex-direction: column; align-items: flex-start; gap: 8px; }
+      footer .right { margin-left: 0; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Top Navigation -->
+<nav>
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="logo">S</span> SEnglish</a>
+    <button class="nav-toggle" id="navToggle" type="button" aria-label="Mở menu" aria-expanded="false" aria-controls="navLinks">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="links" id="navLinks">
+      <a href="index.html#tinh-nang">Tính năng</a>
+      <a href="huong-dan.html" class="is-active">Cẩm nang hướng dẫn</a>
+      <a href="index.html#mau-excel">Mẫu file Excel</a>
+      <a href="index.html#tai-ung-dung">Tải ứng dụng</a>
+      <a href="privacy.html">Chính sách</a>
+      <a class="nav-cta" href="index.html#tai-ung-dung">Tải miễn phí</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Feature Jump Bar -->
+<div class="feature-subnav">
+  <div class="wrap">
+    <a class="subnav-chip" href="#tu-qua-man">⚡ 1. Tự qua màn vs Nút Tiếp theo</a>
+    <a class="subnav-chip" href="#nhac-hoc">🔔 2. Thông báo nhắc học</a>
+    <a class="subnav-chip" href="#ngon-ngu">🌐 3. Đổi ngôn ngữ học</a>
+    <a class="subnav-chip" href="#luyen-tap">🎯 4. 6 Chế độ luyện tập & Ôn từ sai</a>
+    <a class="subnav-chip" href="#chu-de">📚 5. Chủ đề & Thêm từ vựng</a>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="guide-hero">
+  <div class="wrap">
+    <span class="hero-badge">Cẩm nang người dùng &bull; Hướng dẫn chính thức</span>
+    <h1>Hướng dẫn sử dụng & Khám phá các tính năng nổi bật</h1>
+    <p class="lead">
+      Mô tả chi tiết từng bước thực hiện kèm <strong>ảnh chụp màn hình thực tế từ điện thoại Samsung Galaxy (SM-G960F)</strong>, 
+      giúp bạn hiểu rõ cách cài đặt tự qua màn, nhận thông báo nhắc học, đổi ngôn ngữ và ôn luyện thông minh.
+    </p>
+    <div class="device-note">
+      📱 Toàn bộ ảnh minh họa bên dưới được chụp thực tế từ điện thoại đang kết nối (SM-G960F) &bull; Nhấp vào ảnh để phóng to.
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- ================================================================= -->
+  <!-- 1. TỰ ĐỘNG QUA CÂU VS TỰ BẤM NÚT TIẾP THEO -->
+  <!-- ================================================================= -->
+  <section class="guide-section" id="tu-qua-man">
+    <div class="section-header">
+      <span class="tag">Tính năng nổi bật #1</span>
+      <h2>Cài đặt Tự động qua câu & Nút "Tiếp theo"</h2>
+      <p>
+        Trong các bài luyện tập (Trắc nghiệm, Điền từ, Nối từ...), bạn có toàn quyền chọn: 
+        <strong>Tự động đếm giây qua câu kế tiếp</strong> hoặc <strong>Hiện nút "Tiếp theo"</strong> để bạn chủ động bấm khi đã đọc kỹ.
+      </p>
+    </div>
+
+    <!-- Steps -->
+    <div class="steps-grid">
+      <div class="step-card">
+        <span class="step-badge">1</span>
+        <h3>Vào Cài đặt > Chọn "Tự động qua câu"</h3>
+        <p>
+          Mở tab <strong>Cài đặt</strong> (biểu tượng bánh răng ở góc dưới phải màn hình chính). 
+          Cuộn đến mục <em>Âm thanh & rung</em> và chạm vào dòng <strong>"Tự động qua câu"</strong>.
+        </p>
+        <div class="screenshot-frame" onclick="openModal('assets/guide/guide_settings_autoadvance_visible.png', 'Mục Tự động qua câu trong trang Cài đặt')">
+          <img src="assets/guide/guide_settings_autoadvance_visible.png" alt="Cài đặt tự động qua câu" loading="lazy" />
+          <span class="zoom-hint">🔍 Phóng to</span>
+        </div>
+        <p class="screenshot-caption">Mục "Tự động qua câu" hiển thị trạng thái hiện tại (vd: Tự động sau 6 giây)</p>
+      </div>
+
+      <div class="step-card">
+        <span class="step-badge">2</span>
+        <h3>Chọn 1 trong 4 chế độ chuyển câu</h3>
+        <p>
+          Bảng chọn hiện lên với 4 chế độ linh hoạt:<br />
+          • <strong>Tự động sau 2 giây:</strong> Qua câu siêu nhanh, phù hợp luyện phản xạ.<br />
+          • <strong>Tự động sau 4 giây:</strong> Vừa phải để nhìn lại đáp án.<br />
+          • <strong>Tự động sau 6 giây:</strong> Đủ thời gian nghe phát âm và ghi nhớ.<br />
+          • <strong>Tự bấm (hiện nút Tiếp theo):</strong> Giữ nguyên câu trả lời cho đến khi bạn bấm.
+        </p>
+        <div class="screenshot-frame" onclick="openModal('assets/guide/guide_autoadvance_sheet.png', 'Bảng chọn chế độ chuyển câu')">
+          <img src="assets/guide/guide_autoadvance_sheet.png" alt="Bảng chọn chế độ chuyển câu" loading="lazy" />
+          <span class="zoom-hint">🔍 Phóng to</span>
+        </div>
+        <p class="screenshot-caption">Bảng 4 lựa chọn chuyển câu xuất hiện ở đáy màn hình</p>
+      </div>
+
+      <div class="step-card">
+        <span class="step-badge">3</span>
+        <h3>Xác nhận chế độ đã chọn</h3>
+        <p>
+          Khi bạn chọn <em>"Tự bấm (hiện nút Tiếp theo)"</em>, dòng cài đặt sẽ cập nhật ngay với biểu tượng ngón tay chạm 
+          và phụ đề <em>"Tự bấm (hiện nút Tiếp theo)"</em>.
+        </p>
+        <div class="screenshot-frame" onclick="openModal('assets/guide/guide_manual_mode_set.png', 'Chế độ Tự bấm đã được kích hoạt')">
+          <img src="assets/guide/guide_manual_mode_set.png" alt="Chế độ Tự bấm đã chọn" loading="lazy" />
+          <span class="zoom-hint">🔍 Phóng to</span>
+        </div>
+        <p class="screenshot-caption">Giao diện Cài đặt sau khi kích hoạt chế độ Tự bấm</p>
+      </div>
+    </div>
+
+    <!-- Comparison -->
+    <div class="compare-container">
+      <h3 class="compare-title">Màn hình thực tế khi trả lời câu hỏi: Tự động vs Tự bấm</h3>
+      <p class="compare-lead">
+        Quan sát sự khác biệt trực tiếp trên màn hình luyện tập Trắc nghiệm giữa 2 chế độ:
+      </p>
+
+      <div class="compare-grid">
+        <!-- Col Left: Auto -->
+        <div class="compare-col auto-mode">
+          <span class="compare-tag">Chế độ Tự động (2s / 4s / 6s)</span>
+          <h4>Màn hình tự động qua câu kế tiếp</h4>
+          <p style="font-size: 13.5px; color: var(--ink-2);">
+            Khi bạn chọn đáp án, ứng dụng kiểm tra ngay lập tức:
+          </p>
+          <ul>
+            <li>Hiện thông báo <strong>"Chính xác!"</strong> hoặc báo sai kèm rung/âm thanh.</li>
+            <li>Tự động đọc phát âm từ vựng bằng giọng bản xứ chuẩn.</li>
+            <li><strong>Không có nút bấm ở dưới cùng:</strong> Máy tự động đếm giây và chuyển sang câu mới. Bạn không cần chạm vào màn hình!</li>
+          </ul>
+          <div class="screenshot-frame" onclick="openModal('assets/guide/guide_auto_advance_result.png', 'Kết quả chế độ Tự động: Tự đếm giây chuyển màn')">
+            <img src="assets/guide/guide_auto_advance_result.png" alt="Màn hình tự động qua câu" loading="lazy" />
+            <span class="zoom-hint">🔍 Phóng to</span>
+          </div>
+          <p class="screenshot-caption">Ảnh thật: Trả lời xong, đếm giây tự chuyển, không có nút ở đáy</p>
+        </div>
+
+        <!-- Col Right: Manual -->
+        <div class="compare-col manual-mode">
+          <span class="compare-tag">Chế độ Tự bấm (Manual)</span>
+          <h4>Xuất hiện nút [➔ Tiếp theo] màu xanh</h4>
+          <p style="font-size: 13.5px; color: var(--ink-2);">
+            Khi bạn chọn đáp án, màn hình giữ nguyên kết quả:
+          </p>
+          <ul>
+            <li>Hiện đáp án và đọc phát âm để bạn nghe kỹ lại.</li>
+            <li><strong>Xuất hiện nút [➔ Tiếp theo] màu xanh nổi bật</strong> ở đáy màn hình.</li>
+            <li>Màn hình không bao giờ tự nhảy! Bạn có thể đọc kỹ từ loại, phiên âm, ví dụ. Khi nào sẵn sàng thì mới chạm <strong>"Tiếp theo"</strong>.</li>
+          </ul>
+          <div class="screenshot-frame" onclick="openModal('assets/guide/guide_manual_button_result.png', 'Kết quả chế độ Tự bấm: Nút Tiếp theo màu xanh nổi bật ở đáy màn hình')">
+            <img src="assets/guide/guide_manual_button_result.png" alt="Màn hình hiện nút Tiếp theo" loading="lazy" />
+            <span class="zoom-hint">🔍 Phóng to</span>
+          </div>
+          <p class="screenshot-caption">Ảnh thật: Nút [➔ Tiếp theo] màu xanh xuất hiện ở cuối màn hình</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="tip-box">
+      <span class="tip-icon">💡</span>
+      <div>
+        <strong>Gợi ý chọn chế độ:</strong> Nếu bạn đang học từ mới và cần thời gian ghi chép hoặc nghe đi nghe lại phát âm, hãy chọn <em>"Tự bấm"</em>. 
+        Nếu bạn đang ôn tập lại những từ đã biết và muốn tăng tốc độ phản xạ thi Toeic/IELTS, hãy chọn <em>"Tự động sau 2 giây"</em>!
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================= -->
+  <!-- 2. THÔNG BÁO NHẮC HỌC & CHỈ TIÊU HẰNG NGÀY -->
+  <!-- ================================================================= -->
+  <section class="guide-section" id="nhac-hoc">
+    <div class="section-header">
+      <span class="tag">Duy trì thói quen #2</span>
+      <h2>Thông báo Nhắc nhở Học tập & Chỉ tiêu mỗi ngày</h2>
+      <p>
+        Học từ vựng quan trọng nhất là sự đều đặn. SEnglish tích hợp hệ thống nhắc nhở thông minh 
+        chạy 100% offline, định kỳ gửi thông báo động về trung tâm thông báo điện thoại của bạn.
+      </p>
+    </div>
+
+    <div class="steps-grid">
+      <div class="step-card">
+        <span class="step-badge">1</span>
+        <h3>Thiết lập số từ mục tiêu mỗi ngày</h3>
+        <p>
+          Trong mục <strong>Mục tiêu học tập</strong> (tab Cài đặt), bấm nút <strong>[+]</strong> hoặc <strong>[-]</strong> 
+          để đặt chỉ tiêu (ví dụ 10 từ/ngày, 20 từ/ngày). Con số này sẽ được đưa vào nội dung thông báo hàng ngày.
+        </p>
+        <div class="screenshot-frame" onclick="openModal('assets/guide/guide_settings.png', 'Mục tiêu học tập và nhắc nhở')">
+          <img src="assets/guide/guide_settings.png" alt="Mục tiêu học tập" loading="lazy" />
+          <span class="zoom-hint">🔍 Phóng to</span>
+        </div>
+        <p class="screenshot-caption">Đặt chỉ tiêu từ vựng và xem mục nhắc học</p>
+      </div>
+
+      <div class="step-card">
+        <span class="step-badge">2</span>
+        <h3>Bật công tắc "Nhắc học mỗi ngày"</h3>
+        <p>
+          Gạt công tắc sang trạng thái <strong>BẬT</strong> (màu xanh). Ngay dưới sẽ hiện dòng xem trước nội dung: 
+          <em>Nội dung thông báo: "Bạn cần ôn 10 từ hôm nay để đạt chỉ tiêu."</em>.
+        </p>
+        <div class="screenshot-frame" onclick="openModal('assets/guide/guide_reminder_setting.png', 'Cài đặt công tắc nhắc học')">
+          <img src="assets/guide/guide_reminder_setting.png" alt="Công tắc nhắc nhở" loading="lazy" />
+          <span class="zoom-hint">🔍 Phóng to</span>
+        </div>
+        <p class="screenshot-caption">Công tắc bật nhắc học và nội dung thông báo mẫu</p>
+      </div>
+
+      <div class="step-card">
+        <span class="step-badge">3</span>
+        <h3>Chọn khung giờ nhắc nhở qua đồng hồ</h3>
+        <p>
+          Chạm vào ô <strong>"Giờ nhắc nhở"</strong> để mở đồng hồ chọn giờ (ví dụ 20:00 buổi tối sau khi cơm nước xong, 
+          hoặc 07:00 sáng trước khi đi làm/đi học).
+        </p>
+        <div class="screenshot-frame" onclick="openModal('assets/guide/guide_reminder_time_dialog.png', 'Đồng hồ chọn giờ thông báo')">
+          <img src="assets/guide/guide_reminder_time_dialog.png" alt="Đồng hồ chọn giờ thông báo" loading="lazy" />
+          <span class="zoom-hint">🔍 Phóng to</span>
+        </div>
+        <p class="screenshot-caption">Đồng hồ trực quan cho phép chọn chính xác giờ và phút</p>
+      </div>
+    </div>
+
+    <!-- Notification Visual Representation -->
+    <div class="notif-box">
+      <div class="notif-header">
+        <div class="notif-icon">🔔</div>
+        <div>
+          <div class="notif-title">Nhắc nhở học từ vựng hôm nay</div>
+          <div class="notif-sub">SEnglish &bull; Thông báo đẩy hệ thống</div>
+        </div>
+      </div>
+      <div class="notif-body">
+        "Bạn cần ôn 10 từ hôm nay để đạt chỉ tiêu. Cố lên nhé!"
+      </div>
+      <p style="margin-top: 10px; font-size: 13px; color: var(--muted);">
+        👉 Khi bạn chạm vào thông báo trên điện thoại, app sẽ mở ngay lập tức để bạn vào ôn tập mà không bị đứt quãng thói quen.
+      </p>
+    </div>
+
+    <div class="tip-box">
+      <span class="tip-icon">📴</span>
+      <div>
+        <strong>Hoạt động không cần mạng:</strong> Hệ thống thông báo sử dụng Alarm của hệ điều hành Android/iOS, 
+        do đó thông báo sẽ đổ chuông đúng giờ ngay cả khi điện thoại không có Wi-Fi, 4G hay đang bật Chế độ máy bay!
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================= -->
+  <!-- 3. CHỌN NGÔN NGỮ HỌC TẬP -->
+  <!-- ================================================================= -->
+  <section class="guide-section" id="ngon-ngu">
+    <div class="section-header">
+      <span class="tag">Đa ngôn ngữ #3</span>
+      <h2>Chọn & Chuyển đổi Ngôn ngữ Học tập</h2>
+      <p>
+        SEnglish hỗ trợ học song song nhiều ngoại ngữ: Tiếng Anh, Tiếng Nhật, Tiếng Hàn, Tiếng Trung (Giản/Phồn thể), 
+        Tiếng Pháp, Đức, Tây Ban Nha... Mỗi ngôn ngữ sở hữu sổ từ vựng, phiên âm chuẩn và phát âm hoàn toàn độc lập.
+      </p>
+    </div>
+
+    <div class="steps-grid">
+      <div class="step-card">
+        <span class="step-badge">1</span>
+        <h3>Mở bảng chọn ngôn ngữ</h3>
+        <p>
+          Tại đầu trang <strong>Cài đặt</strong>, chạm vào ô <strong>"Ngôn ngữ đang học"</strong> 
+          (có lá cờ quốc gia và tên phiên âm).
+        </p>
+        <div class="screenshot-frame" onclick="openModal('assets/guide/guide_settings.png', 'Khung chọn ngôn ngữ ở đầu trang')">
+          <img src="assets/guide/guide_settings.png" alt="Khung chọn ngôn ngữ" loading="lazy" />
+          <span class="zoom-hint">🔍 Phóng to</span>
+        </div>
+        <p class="screenshot-caption">Khung ngôn ngữ đang học luôn nằm ở đầu trang Cài đặt</p>
+      </div>
+
+      <div class="step-card">
+        <span class="step-badge">2</span>
+        <h3>Chọn ngôn ngữ kèm hệ thống phiên âm chuẩn</h3>
+        <p>
+          Hộp thoại hiển thị các ngôn ngữ cùng bộ phiên âm chuyên biệt:<br />
+          • <strong>Tiếng Anh:</strong> Phiên âm quốc tế IPA chuẩn Oxford.<br />
+          • <strong>Tiếng Nhật:</strong> Phiên âm chữ Romaji.<br />
+          • <strong>Tiếng Hàn:</strong> Phiên âm Romaja.<br />
+          • <strong>Tiếng Trung:</strong> Phiên âm Pinyin (Bính âm).
+        </p>
+        <div class="screenshot-frame" onclick="openModal('assets/guide/guide_lang_dialog.png', 'Hộp thoại Chọn ngôn ngữ học')">
+          <img src="assets/guide/guide_lang_dialog.png" alt="Hộp thoại chọn ngôn ngữ" loading="lazy" />
+          <span class="zoom-hint">🔍 Phóng to</span>
+        </div>
+        <p class="screenshot-caption">Danh sách ngôn ngữ kèm hệ thống phiên âm tương ứng</p>
+      </div>
+
+      <div class="step-card">
+        <span class="step-badge">3</span>
+        <h3>Chuyển đổi tức thì & Sổ từ riêng biệt</h3>
+        <p>
+          Ngay sau khi chạm chọn, thông báo xác nhận xuất hiện: <em>"Đã chuyển sang tiếng Anh &bull; 104 từ trong sổ"</em>. 
+          Toàn bộ chế độ luyện tập, phát âm và bộ chủ đề sẽ tự động chuyển sang ngôn ngữ mới.
+        </p>
+        <div class="screenshot-frame" onclick="openModal('assets/guide/guide_lang_selected.png', 'Thông báo chuyển ngôn ngữ thành công')">
+          <img src="assets/guide/guide_lang_selected.png" alt="Chuyển ngôn ngữ thành công" loading="lazy" />
+          <span class="zoom-hint">🔍 Phóng to</span>
+        </div>
+        <p class="screenshot-caption">Thông báo chuyển đổi thành công ở đáy màn hình</p>
+      </div>
+    </div>
+
+    <div class="tip-box">
+      <span class="tip-icon">✨</span>
+      <div>
+        <strong>Dữ liệu không bao giờ bị mất:</strong> Bạn có thể chuyển từ Tiếng Anh sang Tiếng Nhật để học, 
+        rồi chuyển lại Tiếng Anh bất kỳ lúc nào — toàn bộ 104 từ tiếng Anh của bạn vẫn được lưu giữ nguyên vẹn!
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================= -->
+  <!-- 4. 6 CHẾ ĐỘ LUYỆN TẬP & ÔN TỪ CHƯA THUỘC -->
+  <!-- ================================================================= -->
+  <section class="guide-section" id="luyen-tap">
+    <div class="section-header">
+      <span class="tag">Phương pháp học #4</span>
+      <h2>6 Chế độ Luyện tập & Ôn đúng từ Chưa thuộc</h2>
+      <p>
+        Thay vì chỉ lướt thẻ từ vựng một cách thụ động, SEnglish cung cấp 6 cách kiểm tra tương tác đa giác quan 
+        kèm thuật toán thống kê từ hay trả lời sai để bạn dứt điểm từ khó.
+      </p>
+    </div>
+
+    <div class="modes-list">
+      <div class="mode-item">
+        <span class="num">1</span>
+        <div>
+          <strong>Tự chọn từ để ôn tập</strong>
+          <span>Lọc riêng các từ chưa thuộc (từng sai nhiều lần) để ôn dứt điểm.</span>
+        </div>
+      </div>
+      <div class="mode-item">
+        <span class="num">2</span>
+        <div>
+          <strong>Trắc nghiệm nghĩa</strong>
+          <span>Chọn nghĩa đúng trong 4 đáp án (cần tối thiểu 4 từ trong sổ).</span>
+        </div>
+      </div>
+      <div class="mode-item">
+        <span class="num">3</span>
+        <div>
+          <strong>Điền chữ cái còn thiếu</strong>
+          <span>Chạy đua 10 giây điền các ký tự bị khuyết, kèm gợi ý nghĩa.</span>
+        </div>
+      </div>
+      <div class="mode-item">
+        <span class="num">4</span>
+        <div>
+          <strong>Nối từ với nghĩa</strong>
+          <span>Ghép 6 cặp từ trong một lượt (cần tối thiểu 6 từ trong sổ).</span>
+        </div>
+      </div>
+      <div class="mode-item">
+        <span class="num">5</span>
+        <div>
+          <strong>Gõ nghĩa tiếng Việt</strong>
+          <span>Nhìn từ ngoại ngữ và tự gõ nghĩa tương ứng.</span>
+        </div>
+      </div>
+      <div class="mode-item">
+        <span class="num">6</span>
+        <div>
+          <strong>Nghe phát âm & Gõ từ</strong>
+          <span>Luyện kỹ năng nghe: nghe máy đọc và gõ chính xác từ vựng.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="steps-grid">
+      <div class="step-card">
+        <span class="step-badge">★</span>
+        <h3>Danh sách các chế độ trên Tab Từ vựng</h3>
+        <p>
+          Tại màn hình chính, cuộn xuống phần <strong>"Chọn cách luyện tập"</strong> để bấm vào bất kỳ bài tập nào bạn muốn thử sức hôm nay.
+        </p>
+        <div class="screenshot-frame" onclick="openModal('assets/guide/guide_practice_modes.png', 'Danh sách 6 chế độ luyện tập')">
+          <img src="assets/guide/guide_practice_modes.png" alt="Các chế độ luyện tập" loading="lazy" />
+          <span class="zoom-hint">🔍 Phóng to</span>
+        </div>
+        <p class="screenshot-caption">Màn hình danh sách các chế độ luyện tập phong phú</p>
+      </div>
+
+      <div class="step-card">
+        <span class="step-badge">★</span>
+        <h3>Tính năng: Tự chọn từ để ôn tập (Chưa thuộc)</h3>
+        <p>
+          App tự động ghi nhận số lượt Đúng/Sai. Khi vào <em>"Tự chọn từ để ôn tập"</em>, chuyển sang tab <strong>"Chưa thuộc"</strong> 
+          để xem danh sách những từ bạn từng làm sai (vd: <em>assist sai 1, handle sai 1...</em>). 
+          Tick chọn những từ cần học lại và bấm <strong>"Chọn từ để ôn tập"</strong>!
+        </p>
+        <div class="screenshot-frame" onclick="openModal('assets/guide/guide_select_review.png', 'Lọc riêng các từ chưa thuộc')">
+          <img src="assets/guide/guide_select_review.png" alt="Lọc từ chưa thuộc" loading="lazy" />
+          <span class="zoom-hint">🔍 Phóng to</span>
+        </div>
+        <p class="screenshot-caption">Lọc riêng từ chưa thuộc kèm số lần đúng/sai chi tiết</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================= -->
+  <!-- 5. HỌC THEO CHỦ ĐỀ & THÊM TỪ VỰNG -->
+  <!-- ================================================================= -->
+  <section class="guide-section" id="chu-de">
+    <div class="section-header">
+      <span class="tag">Kho tài nguyên #5</span>
+      <h2>Học theo 50 Chủ đề & Xây sổ từ vựng (Nhập Excel)</h2>
+      <p>
+        SEnglish cung cấp sẵn hơn 50 chủ đề từ vựng Toeic thông dụng (615 từ), 
+        đồng thời hỗ trợ bạn thêm từ thủ công tra phiên âm tự động hoặc nhập hàng loạt từ Excel.
+      </p>
+    </div>
+
+    <div class="steps-grid">
+      <div class="step-card">
+        <span class="step-badge">1</span>
+        <h3>Tab "Chủ đề": Hơn 50 danh mục chuyên ngành</h3>
+        <p>
+          Chạm vào tab <strong>"Chủ đề"</strong> trên thanh điều hướng dưới cùng. 
+          Các chủ đề được trình bày trực quan bằng các thẻ màu sắc (Kế toán, Hàng không, Ứng tuyển & Phỏng vấn, Ngân hàng...).
+        </p>
+        <div class="screenshot-frame" onclick="openModal('assets/guide/guide_topics_tab.png', 'Hơn 50 chủ đề từ vựng Toeic')">
+          <img src="assets/guide/guide_topics_tab.png" alt="Tab Học theo chủ đề" loading="lazy" />
+          <span class="zoom-hint">🔍 Phóng to</span>
+        </div>
+        <p class="screenshot-caption">Giao diện Học theo chủ đề với thẻ màu sinh động</p>
+      </div>
+
+      <div class="step-card">
+        <span class="step-badge">2</span>
+        <h3>Chi tiết chủ đề & Luyện tập ngay</h3>
+        <p>
+          Chạm vào chủ đề để mở danh sách từ vựng. Bạn có thể nghe phát âm chuẩn của từng từ, 
+          xem phiên âm IPA, nghĩa tiếng Việt và bấm <strong>"Ôn tập [x] từ của chủ đề"</strong> để bắt đầu kiểm tra.
+        </p>
+        <div class="screenshot-frame" onclick="openModal('assets/guide/guide_topic_words_sheet.png', 'Chi tiết từ vựng chủ đề Kế toán')">
+          <img src="assets/guide/guide_topic_words_sheet.png" alt="Chi tiết từ vựng chủ đề" loading="lazy" />
+          <span class="zoom-hint">🔍 Phóng to</span>
+        </div>
+        <p class="screenshot-caption">Bảng từ vựng chi tiết kèm phiên âm IPA và nút ôn tập</p>
+      </div>
+
+      <div class="step-card">
+        <span class="step-badge">3</span>
+        <h3>Thêm từ thủ công & Nhập tệp Excel</h3>
+        <p>
+          Trong <strong>Quản lý từ vựng</strong>:<br />
+          • <strong>Nhập thủ công:</strong> Gõ từ tiếng Anh, app tự động tra và điền phiên âm IPA, nghĩa và từ loại.<br />
+          • <strong>Nhập từ Excel (.xlsx / .xls):</strong> Hỗ trợ file 2 cột hoặc 4 cột để nạp hàng trăm từ cùng lúc trong tích tắc!
+        </p>
+        <div class="screenshot-frame" onclick="openModal('assets/guide/guide_add_word.png', 'Khung nhập từ thủ công và chọn file Excel')">
+          <img src="assets/guide/guide_add_word.png" alt="Thêm từ vựng và nhập Excel" loading="lazy" />
+          <span class="zoom-hint">🔍 Phóng to</span>
+        </div>
+        <p class="screenshot-caption">Khung nhập từ tự tra IPA và nút chọn file Excel</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- Lightbox Modal for Fullscreen Screenshot -->
+<div class="modal-overlay" id="imageModal" onclick="closeModal()">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <button class="modal-close" onclick="closeModal()" aria-label="Đóng">&times;</button>
+    <img id="modalImg" src="" alt="Ảnh chụp màn hình thực tế" />
+    <div class="modal-caption" id="modalCaption"></div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer>
+  <div class="wrap">
+    <div>&copy; 2026 SEnglish &bull; Sổ tay từ vựng đa ngôn ngữ thông minh</div>
+    <div class="right">
+      <a href="index.html">Trang chủ</a> &bull;
+      <a href="huong-dan.html">Cẩm nang hướng dẫn</a> &bull;
+      <a href="index.html#mau-excel">Tải mẫu Excel</a> &bull;
+      <a href="privacy.html">Chính sách bảo mật</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Mobile nav toggle
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  if (navToggle && navLinks) {
+    navToggle.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  }
+
+  // Lightbox Modal
+  const modal = document.getElementById('imageModal');
+  const modalImg = document.getElementById('modalImg');
+  const modalCaption = document.getElementById('modalCaption');
+
+  function openModal(src, caption) {
+    if (!modal || !modalImg) return;
+    modalImg.src = src;
+    modalCaption.textContent = caption || 'Ảnh chụp màn hình thực tế trên thiết bị Samsung Galaxy SM-G960F';
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    if (!modal) return;
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeModal();
+  });
+</script>
+
+</body>
+</html>
+

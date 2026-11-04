@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>S English — Sổ tay từ vựng đa ngôn ngữ</title>
-  <meta name="description" content="S English: sổ tay từ vựng đa ngôn ngữ gọn nhẹ. Ghi từ mới, luyện tập mỗi ngày với 6 chế độ, nhắc học hằng ngày, dùng được cả khi không có mạng." />
+  <meta name="description"
+    content="S English: sổ tay từ vựng đa ngôn ngữ gọn nhẹ. Ghi từ mới, luyện tập mỗi ngày với 6 chế độ, nhắc học hằng ngày, dùng được cả khi không có mạng." />
   <meta name="theme-color" content="#0F766E" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
   <meta http-equiv="X-Content-Type-Options" content="nosniff" />
   <meta property="og:title" content="S English — Sổ tay từ vựng đa ngôn ngữ" />
-  <meta property="og:description" content="Ghi từ mới, luyện tập mỗi ngày với 6 chế độ, nhắc học hằng ngày — dùng được cả khi không có mạng." />
+  <meta property="og:description"
+    content="Ghi từ mới, luyện tập mỗi ngày với 6 chế độ, nhắc học hằng ngày — dùng được cả khi không có mạng." />
   <meta property="og:type" content="website" />
   <script>
     // Chỉ bật hiệu ứng xuất hiện khi trình duyệt hỗ trợ IntersectionObserver,
@@ -35,12 +38,19 @@
       --shadow-lg: 0 30px 60px -20px rgba(11, 31, 29, .45);
       --nav-h: 64px;
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     html {
       scroll-behavior: smooth;
       scroll-padding-top: calc(var(--nav-h) + 12px);
       -webkit-text-size-adjust: 100%;
     }
+
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
         "Helvetica Neue", Arial, sans-serif;
@@ -50,89 +60,182 @@
       overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
     }
-    img { max-width: 100%; display: block; }
-    a { text-decoration: none; color: inherit; }
-    ul { list-style: none; }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    ul {
+      list-style: none;
+    }
+
     :focus-visible {
       outline: 3px solid var(--teal);
       outline-offset: 3px;
       border-radius: 8px;
     }
-    .wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+
+    .wrap {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
     .sr-only {
-      position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
-      overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      white-space: nowrap;
+      border: 0;
     }
 
     /* ---------- Nav ---------- */
     nav {
-      position: sticky; top: 0; z-index: 60;
+      position: sticky;
+      top: 0;
+      z-index: 60;
       background: rgba(255, 255, 255, .9);
       backdrop-filter: blur(12px) saturate(1.3);
       -webkit-backdrop-filter: blur(12px) saturate(1.3);
       border-bottom: 1px solid var(--line);
     }
+
     nav .wrap {
-      display: flex; align-items: center; gap: 12px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
       min-height: var(--nav-h);
     }
+
     .brand {
-      display: flex; align-items: center; gap: 10px;
-      font-weight: 800; font-size: 19px; color: var(--teal-dark);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      font-size: 19px;
+      color: var(--teal-dark);
       letter-spacing: -.01em;
     }
+
     .brand .logo {
-      width: 38px; height: 38px; border-radius: 12px;
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
       background: linear-gradient(135deg, var(--teal-light), var(--teal-dark));
-      display: flex; align-items: center; justify-content: center;
-      color: #fff; font-size: 20px; font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 20px;
+      font-weight: 800;
       box-shadow: 0 8px 18px -10px rgba(15, 118, 110, .9);
       flex: none;
     }
+
     nav .links {
       margin-left: auto;
-      display: flex; align-items: center; gap: 2px;
+      display: flex;
+      align-items: center;
+      gap: 2px;
     }
+
     nav .links a {
-      color: var(--muted); font-weight: 600; font-size: 15px;
-      padding: 9px 13px; border-radius: 10px;
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 15px;
+      padding: 9px 13px;
+      border-radius: 10px;
       transition: color .18s ease, background-color .18s ease;
       white-space: nowrap;
     }
-    nav .links a:hover { color: var(--teal-dark); background: #ECFDF5; }
-    nav .links a.is-active { color: var(--teal-dark); background: var(--teal-soft); }
+
+    nav .links a:hover {
+      color: var(--teal-dark);
+      background: #ECFDF5;
+    }
+
+    nav .links a.is-active {
+      color: var(--teal-dark);
+      background: var(--teal-soft);
+    }
+
     nav .links .nav-cta {
       margin-left: 6px;
-      background: var(--teal-dark); color: #fff;
-      padding: 11px 18px; border-radius: 12px;
+      background: var(--teal-dark);
+      color: #fff;
+      padding: 11px 18px;
+      border-radius: 12px;
       box-shadow: 0 10px 20px -12px rgba(15, 118, 110, .95);
     }
-    nav .links .nav-cta:hover { background: #115E59; color: #fff; }
+
+    nav .links .nav-cta:hover {
+      background: #115E59;
+      color: #fff;
+    }
 
     .nav-toggle {
       display: none;
       margin-left: auto;
-      width: 44px; height: 44px;
-      border: 1px solid var(--line); background: #fff;
-      border-radius: 12px; cursor: pointer;
-      flex-direction: column; align-items: center; justify-content: center; gap: 5px;
+      width: 44px;
+      height: 44px;
+      border: 1px solid var(--line);
+      background: #fff;
+      border-radius: 12px;
+      cursor: pointer;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
       -webkit-tap-highlight-color: transparent;
     }
+
     .nav-toggle span {
-      display: block; width: 19px; height: 2px; border-radius: 2px;
-      background: var(--ink); transition: transform .25s ease, opacity .2s ease;
+      display: block;
+      width: 19px;
+      height: 2px;
+      border-radius: 2px;
+      background: var(--ink);
+      transition: transform .25s ease, opacity .2s ease;
     }
-    .nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-    .nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
-    .nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .nav-toggle[aria-expanded="true"] span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+
+    .nav-toggle[aria-expanded="true"] span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .nav-toggle[aria-expanded="true"] span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
 
     @media (max-width: 900px) {
-      .nav-toggle { display: flex; }
+      .nav-toggle {
+        display: flex;
+      }
+
       nav .links {
         display: none;
-        position: absolute; top: 100%; left: 0; right: 0;
-        flex-direction: column; align-items: stretch; gap: 2px;
-        margin: 0; padding: 10px 16px 18px;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 2px;
+        margin: 0;
+        padding: 10px 16px 18px;
         background: rgba(255, 255, 255, .98);
         backdrop-filter: blur(12px);
         -webkit-backdrop-filter: blur(12px);
@@ -141,20 +244,41 @@
         max-height: calc(100dvh - var(--nav-h));
         overflow-y: auto;
       }
-      nav .links.open { display: flex; }
-      nav .links a {
-        padding: 14px 12px; font-size: 16px; color: var(--ink-2);
-        border-bottom: 1px solid #F1F5F9; border-radius: 12px;
+
+      nav .links.open {
+        display: flex;
       }
-      nav .links a:last-child { border-bottom: 0; }
+
+      nav .links a {
+        padding: 14px 12px;
+        font-size: 16px;
+        color: var(--ink-2);
+        border-bottom: 1px solid #F1F5F9;
+        border-radius: 12px;
+      }
+
+      nav .links a:last-child {
+        border-bottom: 0;
+      }
+
       nav .links .nav-cta {
-        margin: 10px 0 0; text-align: center;
-        padding: 14px 18px; font-size: 16px;
+        margin: 10px 0 0;
+        text-align: center;
+        padding: 14px 18px;
+        font-size: 16px;
       }
     }
+
     @media (max-width: 380px) {
-      .brand { font-size: 17px; }
-      .brand .logo { width: 34px; height: 34px; font-size: 18px; }
+      .brand {
+        font-size: 17px;
+      }
+
+      .brand .logo {
+        width: 34px;
+        height: 34px;
+        font-size: 18px;
+      }
     }
 
     /* ---------- Hero ---------- */
@@ -167,139 +291,368 @@
       color: #fff;
       overflow: hidden;
     }
+
     .hero::after {
       content: "";
-      position: absolute; inset: auto 0 -140px 0; height: 220px;
+      position: absolute;
+      inset: auto 0 -140px 0;
+      height: 220px;
       background: radial-gradient(60% 100% at 50% 100%, rgba(45, 212, 191, .28), transparent 70%);
       pointer-events: none;
     }
+
     .hero .wrap {
-      position: relative; z-index: 1;
-      display: grid; grid-template-columns: 1.15fr .85fr; gap: 40px;
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 40px;
       padding: clamp(48px, 7vw, 76px) 20px clamp(56px, 8vw, 88px);
       align-items: center;
     }
+
     .badge {
-      display: inline-block; font-size: 13px; font-weight: 700;
-      background: rgba(255,255,255,.16); border: 1px solid rgba(255,255,255,.4);
-      padding: 7px 14px; border-radius: 999px; margin-bottom: 18px;
+      display: inline-block;
+      font-size: 13px;
+      font-weight: 700;
+      background: rgba(255, 255, 255, .16);
+      border: 1px solid rgba(255, 255, 255, .4);
+      padding: 7px 14px;
+      border-radius: 999px;
+      margin-bottom: 18px;
       backdrop-filter: blur(4px);
     }
+
     .hero h1 {
-      font-size: clamp(30px, 6vw, 48px); line-height: 1.14; font-weight: 800;
-      letter-spacing: -.02em; text-wrap: balance;
+      font-size: clamp(30px, 6vw, 48px);
+      line-height: 1.14;
+      font-weight: 800;
+      letter-spacing: -.02em;
+      text-wrap: balance;
     }
+
     .hero p.sub {
-      margin: 16px 0 28px; font-size: clamp(16px, 2.2vw, 18px);
-      opacity: .94; max-width: 540px;
+      margin: 16px 0 28px;
+      font-size: clamp(16px, 2.2vw, 18px);
+      opacity: .94;
+      max-width: 540px;
     }
-    .cta-row { display: flex; gap: 12px; flex-wrap: wrap; }
+
+    .cta-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
     .btn {
-      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-      padding: 13px 24px; border-radius: 12px; font-weight: 700; font-size: 16px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 13px 24px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 16px;
       transition: transform .18s ease, box-shadow .18s ease, background-color .18s ease;
       -webkit-tap-highlight-color: transparent;
     }
-    .btn:hover { transform: translateY(-2px); }
-    .btn-light { background: #fff; color: var(--teal-dark); box-shadow: 0 14px 26px -14px rgba(0,0,0,.5); }
-    .btn-outline { border: 2px solid rgba(255,255,255,.7); color: #fff; }
-    .btn-outline:hover { background: rgba(255,255,255,.12); }
-    .btn-solid { background: var(--teal-dark); color: #fff; }
-    .btn-solid:hover { background: #115E59; }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-light {
+      background: #fff;
+      color: var(--teal-dark);
+      box-shadow: 0 14px 26px -14px rgba(0, 0, 0, .5);
+    }
+
+    .btn-outline {
+      border: 2px solid rgba(255, 255, 255, .7);
+      color: #fff;
+    }
+
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, .12);
+    }
+
+    .btn-solid {
+      background: var(--teal-dark);
+      color: #fff;
+    }
+
+    .btn-solid:hover {
+      background: #115E59;
+    }
 
     .hero-stats {
-      display: flex; gap: 12px; margin-top: 34px; flex-wrap: wrap;
+      display: flex;
+      gap: 12px;
+      margin-top: 34px;
+      flex-wrap: wrap;
     }
+
     .hero-stats div {
       flex: 1 1 130px;
-      background: rgba(255,255,255,.1);
-      border: 1px solid rgba(255,255,255,.16);
-      border-radius: 14px; padding: 12px 14px;
+      background: rgba(255, 255, 255, .1);
+      border: 1px solid rgba(255, 255, 255, .16);
+      border-radius: 14px;
+      padding: 12px 14px;
     }
-    .hero-stats div strong { display: block; font-size: clamp(20px, 4.5vw, 26px); line-height: 1.2; }
-    .hero-stats div span { font-size: 13.5px; opacity: .85; }
 
-    .phone-holder { display: flex; justify-content: center; }
+    .hero-stats div strong {
+      display: block;
+      font-size: clamp(20px, 4.5vw, 26px);
+      line-height: 1.2;
+    }
+
+    .hero-stats div span {
+      font-size: 13.5px;
+      opacity: .85;
+    }
+
+    .phone-holder {
+      display: flex;
+      justify-content: center;
+    }
+
     .phone {
-      width: 230px; height: 470px; background: #0B1F1D;
-      border-radius: 38px; padding: 12px;
+      width: 230px;
+      height: 470px;
+      background: #0B1F1D;
+      border-radius: 38px;
+      padding: 12px;
       box-shadow: var(--shadow-lg);
       flex: none;
     }
+
     .phone .screen {
-      background: #fff; border-radius: 28px; height: 100%;
-      padding: 22px 16px; color: var(--ink); overflow: hidden;
+      background: #fff;
+      border-radius: 28px;
+      height: 100%;
+      padding: 22px 16px;
+      color: var(--ink);
+      overflow: hidden;
     }
-    .phone .app-title { font-weight: 800; color: var(--teal-dark); font-size: 15px; }
+
+    .phone .app-title {
+      font-weight: 800;
+      color: var(--teal-dark);
+      font-size: 15px;
+    }
+
     .phone .word-card {
-      margin-top: 14px; background: var(--bg); border-radius: 12px; padding: 12px;
+      margin-top: 14px;
+      background: var(--bg);
+      border-radius: 12px;
+      padding: 12px;
       border: 1px solid var(--line);
     }
-    .phone .word-card b { color: var(--teal-dark); font-size: 19px; }
-    .phone .word-card small { color: var(--muted); display: block; font-size: 11.5px; }
-    .phone .opt {
-      margin-top: 10px; border-radius: 10px; padding: 9px 12px; font-size: 13px;
-      border: 1.5px solid var(--line); font-weight: 600;
+
+    .phone .word-card b {
+      color: var(--teal-dark);
+      font-size: 19px;
     }
-    .phone .opt.ok { border-color: #16A34A; background: #DCFCE7; color: #15803D; }
+
+    .phone .word-card small {
+      color: var(--muted);
+      display: block;
+      font-size: 11.5px;
+    }
+
+    .phone .opt {
+      margin-top: 10px;
+      border-radius: 10px;
+      padding: 9px 12px;
+      font-size: 13px;
+      border: 1.5px solid var(--line);
+      font-weight: 600;
+    }
+
+    .phone .opt.ok {
+      border-color: #16A34A;
+      background: #DCFCE7;
+      color: #15803D;
+    }
 
     @media (max-width: 900px) {
-      .hero .wrap { grid-template-columns: 1fr; gap: 34px; text-align: center; }
-      .hero p.sub { margin-left: auto; margin-right: auto; }
-      .cta-row { justify-content: center; }
-      .hero-stats { justify-content: center; }
-      .hero-stats div { flex: 0 1 165px; text-align: left; }
-      .phone-holder { height: 320px; }
-      .phone { transform: scale(.68); transform-origin: top center; }
+      .hero .wrap {
+        grid-template-columns: 1fr;
+        gap: 34px;
+        text-align: center;
+      }
+
+      .hero p.sub {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .cta-row {
+        justify-content: center;
+      }
+
+      .hero-stats {
+        justify-content: center;
+      }
+
+      .hero-stats div {
+        flex: 0 1 165px;
+        text-align: left;
+      }
+
+      .phone-holder {
+        height: 320px;
+      }
+
+      .phone {
+        transform: scale(.68);
+        transform-origin: top center;
+      }
     }
+
     @media (max-width: 420px) {
-      .hero-stats div { flex: 1 1 100%; }
-      .cta-row .btn { width: 100%; }
+      .hero-stats div {
+        flex: 1 1 100%;
+      }
+
+      .cta-row .btn {
+        width: 100%;
+      }
     }
 
     /* ---------- Sections ---------- */
-    section { padding: clamp(48px, 7vw, 76px) 0; }
+    section {
+      padding: clamp(48px, 7vw, 76px) 0;
+    }
+
     section h2 {
-      font-size: clamp(23px, 4.4vw, 34px); font-weight: 800; text-align: center;
-      letter-spacing: -.02em; text-wrap: balance;
+      font-size: clamp(23px, 4.4vw, 34px);
+      font-weight: 800;
+      text-align: center;
+      letter-spacing: -.02em;
+      text-wrap: balance;
     }
+
     section p.lead {
-      text-align: center; color: var(--muted); max-width: 660px;
-      margin: 12px auto 34px; font-size: clamp(15px, 2.2vw, 17px);
+      text-align: center;
+      color: var(--muted);
+      max-width: 660px;
+      margin: 12px auto 34px;
+      font-size: clamp(15px, 2.2vw, 17px);
     }
+
     .grid {
-      display: grid; gap: 18px;
+      display: grid;
+      gap: 18px;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
+
     .card {
-      background: var(--card); border: 1px solid #E1E8E5; border-radius: var(--radius);
+      background: var(--card);
+      border: 1px solid #E1E8E5;
+      border-radius: var(--radius);
       padding: 24px 22px;
       box-shadow: var(--shadow-sm);
       transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
     }
+
     .card:hover {
       transform: translateY(-4px);
       box-shadow: var(--shadow-md);
       border-color: #CBE9E4;
     }
+
     .card .icon {
-      width: 46px; height: 46px; border-radius: 14px; font-size: 22px;
-      background: var(--teal-soft); display: flex; align-items: center; justify-content: center;
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      font-size: 22px;
+      background: var(--teal-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
       margin-bottom: 14px;
     }
-    .card h3 { font-size: 17px; margin-bottom: 6px; letter-spacing: -.01em; }
-    .card p { font-size: 14.5px; color: var(--muted); }
 
-    /* ---------- Excel template ---------- */
-    .excel-grid { max-width: 780px; margin: 0 auto; }
-    .excel-grid .card { text-align: center; display: flex; flex-direction: column; }
-    .excel-grid .icon { margin-left: auto; margin-right: auto; }
-    .excel-grid .card p { flex: 1; }
-    .excel-grid .btn { margin-top: 18px; width: 100%; }
+    .card h3 {
+      font-size: 17px;
+      margin-bottom: 6px;
+      letter-spacing: -.01em;
+    }
+
+    .card p {
+      font-size: 14.5px;
+      color: var(--muted);
+    }
+
+    /* ---------- Excel & CSV templates ---------- */
+    .excel-grid {
+      max-width: 1040px;
+      margin: 0 auto;
+    }
+
+    .excel-grid .card {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .excel-grid .icon {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .excel-grid .card p {
+      flex: 1;
+    }
+
+    .excel-grid .btn {
+      margin-top: 18px;
+      width: 100%;
+    }
+
     .note {
-      max-width: 780px; margin: 18px auto 0; font-size: 14.5px;
-      background: #ECFEFF; border: 1px solid #A5F3FC; border-radius: var(--radius);
-      padding: 18px 20px; color: #155E75;
+      max-width: 1040px;
+      margin: 24px auto 0;
+      font-size: 14.5px;
+      background: #ECFEFF;
+      border: 1px solid #A5F3FC;
+      border-radius: var(--radius);
+      padding: 18px 22px;
+      color: #155E75;
+    }
+
+    .note ul {
+      margin: 10px 0 0;
+      padding-left: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .note li {
+      position: relative;
+      padding-left: 20px;
+      line-height: 1.55;
+    }
+
+    .note li::before {
+      content: "•";
+      position: absolute;
+      left: 6px;
+      color: #0E7490;
+      font-weight: bold;
+    }
+
+    .note code {
+      font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
+      font-size: 12.5px;
+      background: rgba(255, 255, 255, 0.7);
+      padding: 2px 6px;
+      border-radius: 6px;
+      border: 1px solid #BAE6FD;
+      color: #0369A1;
+      word-break: break-all;
     }
 
     /* ---------- Download ---------- */
@@ -309,258 +662,450 @@
         #0B1F1D;
       color: #fff;
     }
-    #tai-ung-dung h2 { color: #fff; }
-    #tai-ung-dung p.lead { color: #A7F3D0; }
-    .dl-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; max-width: 780px; margin: 0 auto; }
+
+    #tai-ung-dung h2 {
+      color: #fff;
+    }
+
+    #tai-ung-dung p.lead {
+      color: #A7F3D0;
+    }
+
+    .dl-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
     .dl-card {
-      background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.16);
-      border-radius: var(--radius-lg); padding: 28px 24px; text-align: center;
-      display: flex; flex-direction: column; align-items: center;
+      background: rgba(255, 255, 255, .07);
+      border: 1px solid rgba(255, 255, 255, .16);
+      border-radius: var(--radius-lg);
+      padding: 28px 24px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       transition: transform .22s ease, background-color .22s ease;
     }
-    .dl-card:hover { transform: translateY(-4px); background: rgba(255,255,255,.11); }
-    .dl-card h3 { font-size: 20px; margin-bottom: 4px; }
-    .dl-card p { color: #A7F3D0; font-size: 14px; margin-bottom: 18px; }
-    .dl-card img.qr {
-      width: 170px; height: auto; border-radius: 14px; background: #fff; padding: 6px;
+
+    .dl-card:hover {
+      transform: translateY(-4px);
+      background: rgba(255, 255, 255, .11);
     }
-    .dl-card .btn { margin-top: 18px; width: 100%; }
-    .dl-note { text-align: center; color: #A7F3D0; font-size: 14px; margin-top: 26px; }
+
+    .dl-card h3 {
+      font-size: 20px;
+      margin-bottom: 4px;
+    }
+
+    .dl-card p {
+      color: #A7F3D0;
+      font-size: 14px;
+      margin-bottom: 18px;
+    }
+
+    .dl-card img.qr {
+      width: 170px;
+      height: auto;
+      border-radius: 14px;
+      background: #fff;
+      padding: 6px;
+    }
+
+    .dl-card .btn {
+      margin-top: 18px;
+      width: 100%;
+    }
+
+    .dl-note {
+      text-align: center;
+      color: #A7F3D0;
+      font-size: 14px;
+      margin-top: 26px;
+    }
 
     @media (max-width: 620px) {
-      .dl-grid { grid-template-columns: 1fr; }
-      .dl-card img.qr { width: 190px; }
+      .dl-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .dl-card img.qr {
+        width: 190px;
+      }
     }
 
     /* ---------- About / footer ---------- */
     #ve-chung-toi .about-card {
-      background: var(--card); border: 1px solid #E1E8E5; border-radius: var(--radius-lg);
-      padding: clamp(22px, 4vw, 34px); max-width: 780px; margin: 0 auto;
-      font-size: 16.5px; color: var(--ink-2); box-shadow: var(--shadow-sm);
+      background: var(--card);
+      border: 1px solid #E1E8E5;
+      border-radius: var(--radius-lg);
+      padding: clamp(22px, 4vw, 34px);
+      max-width: 780px;
+      margin: 0 auto;
+      font-size: 16.5px;
+      color: var(--ink-2);
+      box-shadow: var(--shadow-sm);
     }
-    #ve-chung-toi .about-card p + p { margin-top: 14px; }
-    #ve-chung-toi .about-card a { color: var(--teal-dark); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
 
-    footer { border-top: 1px solid var(--line); padding: 30px 0 44px; color: var(--muted); font-size: 14px; background: #fff; }
-    footer .wrap { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
-    footer a { color: var(--teal-dark); font-weight: 600; }
-    footer .right { margin-left: auto; }
+    #ve-chung-toi .about-card p+p {
+      margin-top: 14px;
+    }
+
+    #ve-chung-toi .about-card a {
+      color: var(--teal-dark);
+      font-weight: 600;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 30px 0 44px;
+      color: var(--muted);
+      font-size: 14px;
+      background: #fff;
+    }
+
+    footer .wrap {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    footer a {
+      color: var(--teal-dark);
+      font-weight: 600;
+    }
+
+    footer .right {
+      margin-left: auto;
+    }
+
     @media (max-width: 560px) {
-      footer .wrap { flex-direction: column; align-items: flex-start; gap: 8px; }
-      footer .right { margin-left: 0; }
+      footer .wrap {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+      }
+
+      footer .right {
+        margin-left: 0;
+      }
     }
 
     /* ---------- Motion ---------- */
-    .js .reveal { opacity: 0; transform: translateY(18px); }
-    .js .reveal.in { opacity: 1; transform: none; transition: opacity .6s ease, transform .6s ease; }
+    .js .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+    }
+
+    .js .reveal.in {
+      opacity: 1;
+      transform: none;
+      transition: opacity .6s ease, transform .6s ease;
+    }
+
     @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      .reveal { opacity: 1; transform: none; }
-      * { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+      html {
+        scroll-behavior: auto;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+
+      * {
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+      }
     }
   </style>
 </head>
+
 <body>
 
-<nav>
-  <div class="wrap">
-    <a class="brand" href="./"><span class="logo">S</span> S English</a>
-    <button class="nav-toggle" id="navToggle" type="button" aria-label="Mở menu" aria-expanded="false" aria-controls="navLinks">
-      <span></span><span></span><span></span>
-    </button>
-    <div class="links" id="navLinks">
-      <a href="#tinh-nang">Tính năng</a>
-      <a href="#mau-excel">Mẫu Excel</a>
-      <a href="#tai-ung-dung">Tải ứng dụng</a>
-      <a href="#ve-chung-toi">Về chúng tôi</a>
-      <a href="privacy.html">Chính sách</a>
-      <a class="nav-cta" href="#tai-ung-dung">Tải miễn phí</a>
+  <nav>
+    <div class="wrap">
+      <a class="brand" href="./"><span class="logo">S</span> S English</a>
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Mở menu" aria-expanded="false"
+        aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="links" id="navLinks">
+        <a href="#tinh-nang">Tính năng</a>
+        <a href="huong-dan.html">Hướng dẫn sử dụng</a>
+        <a href="#mau-excel">Mẫu file nhập</a>
+        <a href="#tai-ung-dung">Tải ứng dụng</a>
+        <a href="#ve-chung-toi">Về chúng tôi</a>
+        <a href="privacy.html">Chính sách</a>
+        <a class="nav-cta" href="#tai-ung-dung">Tải miễn phí</a>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
 
-<header class="hero">
-  <div class="wrap">
-    <div>
-      <span class="badge">Miễn phí &bull; Không cần tài khoản &bull; Dùng offline</span>
-      <h1>Sổ tay từ vựng đa ngôn ngữ của riêng bạn</h1>
-      <p class="sub">Ghi lại từ mới, luyện tập mỗi ngày với 6 chế độ thú vị và nhớ từ lâu hơn — tất cả trong một ứng dụng gọn nhẹ.</p>
-      <div class="cta-row">
-        <a class="btn btn-light" href="#tai-ung-dung">&#8681; Tải ứng dụng miễn phí</a>
-        <a class="btn btn-outline" href="#tinh-nang">Khám phá tính năng</a>
+  <header class="hero">
+    <div class="wrap">
+      <div>
+        <span class="badge">Miễn phí &bull; Không cần tài khoản &bull; Dùng offline</span>
+        <h1>Sổ tay từ vựng đa ngôn ngữ của riêng bạn</h1>
+        <p class="sub">Ghi lại từ mới, luyện tập mỗi ngày với 6 chế độ thú vị và nhớ từ lâu hơn — tất cả trong một ứng
+          dụng gọn nhẹ.</p>
+        <div class="cta-row">
+          <a class="btn btn-light" href="#tai-ung-dung">&#8681; Tải ứng dụng miễn phí</a>
+          <a class="btn btn-outline" href="#tinh-nang">Khám phá tính năng</a>
+        </div>
+        <div class="hero-stats">
+          <div><strong>6</strong><span>chế độ luyện tập</span></div>
+          <div><strong>5+</strong><span>ngôn ngữ (Anh, Nhật, Hàn, Trung…)</span></div>
+          <div><strong>100%</strong><span>offline cho sổ từ của bạn</span></div>
+        </div>
       </div>
-      <div class="hero-stats">
-        <div><strong>6</strong><span>chế độ luyện tập</span></div>
-        <div><strong>5+</strong><span>ngôn ngữ (Anh, Nhật, Hàn, Trung…)</span></div>
-        <div><strong>100%</strong><span>offline cho sổ từ của bạn</span></div>
-      </div>
-    </div>
-    <div class="phone-holder" aria-hidden="true">
-      <div class="phone">
-        <div class="screen">
-          <div class="app-title">Trắc nghiệm nghĩa</div>
-          <div class="word-card">
-            <b>improve</b>
-            <small>/ɪmˈpruːv/ — chọn nghĩa đúng của từ</small>
+      <div class="phone-holder" aria-hidden="true">
+        <div class="phone">
+          <div class="screen">
+            <div class="app-title">Trắc nghiệm nghĩa</div>
+            <div class="word-card">
+              <b>improve</b>
+              <small>/ɪmˈpruːv/ — chọn nghĩa đúng của từ</small>
+            </div>
+            <div class="opt ok">✓ cải thiện, nâng cao</div>
+            <div class="opt">✗ du lịch</div>
+            <div class="opt">✗ xin chào</div>
           </div>
-          <div class="opt ok">✓ cải thiện, nâng cao</div>
-          <div class="opt">✗ du lịch</div>
-          <div class="opt">✗ xin chào</div>
         </div>
       </div>
     </div>
-  </div>
-</header>
+  </header>
 
-<main>
+  <main>
 
-<section id="tinh-nang">
-  <div class="wrap">
-    <h2>6 cách luyện, đổi qua đổi lại cho đỡ nhàm chán</h2>
-    <p class="lead">Mỗi lượt trả lời đều được ghi lại, ứng dụng biết chính xác từ nào bạn còn yếu để ôn đúng chỗ.</p>
-    <div class="grid">
-      <div class="card reveal"><div class="icon">✅</div><h3>Trắc nghiệm nghĩa</h3><p>Chọn nghĩa đúng trong 4 đáp án, có tính điểm ngay sau mỗi câu.</p></div>
-      <div class="card reveal"><div class="icon">🔤</div><h3>Điền chữ cái còn thiếu</h3><p>Chạy đua với đồng hồ, chạm chữ để điền, chạm lại để trả chữ về khay.</p></div>
-      <div class="card reveal"><div class="icon">🔗</div><h3>Nối từ với nghĩa</h3><p>Ghép 6 cặp từ – nghĩa trong một lượt, chọn sai sẽ rung lắc cảnh báo.</p></div>
-      <div class="card reveal"><div class="icon">⌨️</div><h3>Gõ nghĩa &amp; gõ từ</h3><p>Nhìn từ gõ nghĩa, nhìn nghĩa gõ từ — rèn cả hai chiều ghi nhớ.</p></div>
-      <div class="card reveal"><div class="icon">🎧</div><h3>Nghe &amp; gõ từ</h3><p>Nghe phát âm chuẩn rồi gõ lại, luyện cả tai lẫn tay.</p></div>
-      <div class="card reveal"><div class="icon">🎯</div><h3>Tự chọn từ để ôn</h3><p>Tick chọn những từ chưa thuộc thành danh sách và ôn ngay trong 6 chế độ.</p></div>
-    </div>
-  </div>
-</section>
-
-<section id="tinh-nang-2" style="padding-top:0">
-  <div class="wrap">
-    <h2>Người bạn đồng hành mỗi ngày</h2>
-    <p class="lead">Không chỉ là sổ từ — S English giúp bạn duy trì thói quen học đều đặn.</p>
-    <div class="grid">
-      <div class="card reveal"><div class="icon">📚</div><h3>Sổ từ đa ngôn ngữ</h3><p>Thêm từ thủ công với phiên âm tự động (IPA, Romaji, Pinyin) hoặc nhập hàng loạt từ file Excel.</p></div>
-      <div class="card reveal"><div class="icon">🔍</div><h3>Tra từ ngay trong app</h3><p>Gặp từ lạ? Tra phiên âm, nghĩa và ví dụ rồi thêm vào sổ chỉ với một chạm.</p></div>
-      <div class="card reveal"><div class="icon">⏰</div><h3>Nhắc học hằng ngày</h3><p>Đặt chỉ tiêu số từ mỗi ngày, app nhắc bạn qua thông báo vào đúng giờ đã chọn.</p></div>
-      <div class="card reveal"><div class="icon">📊</div><h3>Thống kê tiến bộ</h3><p>Theo dõi từ đã học, từ hay sai và kiểm tra lại riêng các từ từng trả lời sai.</p></div>
-      <div class="card reveal"><div class="icon">🔊</div><h3>Âm thanh &amp; rung</h3><p>Âm báo đúng/sai, rung khi sai, tự động phát âm từ — tất cả đều bật/tắt được trong Cài đặt.</p></div>
-      <div class="card reveal"><div class="icon">📴</div><h3>Dùng offline</h3><p>Sổ từ của bạn lưu ngay trên máy, không cần đăng nhập, không cần mạng vẫn học được.</p></div>
-    </div>
-  </div>
-</section>
-
-<section id="mau-excel">
-  <div class="wrap">
-    <h2>Mẫu file Excel nhập từ vựng</h2>
-    <p class="lead">Tải file mẫu, điền từ của bạn rồi vào app chọn <strong>Quản lý từ vựng → Chọn tệp Excel</strong> để nhập hàng loạt.</p>
-    <div class="grid excel-grid">
-      <div class="card reveal">
-        <div class="icon">📄</div>
-        <h3>Mẫu 2 cột (đơn giản)</h3>
-        <p>Cột A = từ ngoại ngữ, Cột B = nghĩa tiếng Việt.<br />Phù hợp khi cần nhập nhanh.</p>
-        <a class="btn btn-solid" href="assets/mau-tu-vung-2-cot.xlsx" download>&#8681; Tải mẫu 2 cột (.xlsx)</a>
+    <section id="tinh-nang">
+      <div class="wrap">
+        <h2>6 cách luyện, đổi qua đổi lại cho đỡ nhàm chán</h2>
+        <p class="lead">Mỗi lượt trả lời đều được ghi lại, ứng dụng biết chính xác từ nào bạn còn yếu để ôn đúng chỗ.
+        </p>
+        <div class="grid">
+          <div class="card reveal">
+            <div class="icon">✅</div>
+            <h3>Trắc nghiệm nghĩa</h3>
+            <p>Chọn nghĩa đúng trong 4 đáp án, có tính điểm ngay sau mỗi câu.</p>
+          </div>
+          <div class="card reveal">
+            <div class="icon">🔤</div>
+            <h3>Điền chữ cái còn thiếu</h3>
+            <p>Chạy đua với đồng hồ, chạm chữ để điền, chạm lại để trả chữ về khay.</p>
+          </div>
+          <div class="card reveal">
+            <div class="icon">🔗</div>
+            <h3>Nối từ với nghĩa</h3>
+            <p>Ghép 6 cặp từ – nghĩa trong một lượt, chọn sai sẽ rung lắc cảnh báo.</p>
+          </div>
+          <div class="card reveal">
+            <div class="icon">⌨️</div>
+            <h3>Gõ nghĩa &amp; gõ từ</h3>
+            <p>Nhìn từ gõ nghĩa, nhìn nghĩa gõ từ — rèn cả hai chiều ghi nhớ.</p>
+          </div>
+          <div class="card reveal">
+            <div class="icon">🎧</div>
+            <h3>Nghe &amp; gõ từ</h3>
+            <p>Nghe phát âm chuẩn rồi gõ lại, luyện cả tai lẫn tay.</p>
+          </div>
+          <div class="card reveal">
+            <div class="icon">🎯</div>
+            <h3>Tự chọn từ để ôn</h3>
+            <p>Tick chọn những từ chưa thuộc thành danh sách và ôn ngay trong 6 chế độ.</p>
+          </div>
+        </div>
       </div>
-      <div class="card reveal">
-        <div class="icon">📊</div>
-        <h3>Mẫu 4 cột (đầy đủ)</h3>
-        <p>Cột A = từ, B = từ loại (n/v/adj…), C = nghĩa, D = phiên âm.<br />Khuyên dùng để đủ thông tin.</p>
-        <a class="btn btn-solid" href="assets/mau-tu-vung-4-cot.xlsx" download>&#8681; Tải mẫu 4 cột (.xlsx)</a>
+    </section>
+
+    <section id="tinh-nang-2" style="padding-top:0">
+      <div class="wrap">
+        <h2>Người bạn đồng hành mỗi ngày</h2>
+        <p class="lead">Không chỉ là sổ từ — S English giúp bạn duy trì thói quen học đều đặn.</p>
+        <div class="grid">
+          <div class="card reveal">
+            <div class="icon">📚</div>
+            <h3>Sổ từ đa ngôn ngữ</h3>
+            <p>Thêm từ thủ công với phiên âm tự động (IPA, Romaji, Pinyin) hoặc nhập hàng loạt từ file Excel / CSV.</p>
+          </div>
+          <div class="card reveal">
+            <div class="icon">🔍</div>
+            <h3>Tra từ ngay trong app</h3>
+            <p>Gặp từ lạ? Tra phiên âm, nghĩa và ví dụ rồi thêm vào sổ chỉ với một chạm.</p>
+          </div>
+          <div class="card reveal">
+            <div class="icon">⏰</div>
+            <h3>Nhắc học hằng ngày</h3>
+            <p>Đặt chỉ tiêu số từ mỗi ngày, app nhắc bạn qua thông báo vào đúng giờ đã chọn.</p>
+          </div>
+          <div class="card reveal">
+            <div class="icon">📊</div>
+            <h3>Thống kê tiến bộ</h3>
+            <p>Theo dõi từ đã học, từ hay sai và kiểm tra lại riêng các từ từng trả lời sai.</p>
+          </div>
+          <div class="card reveal">
+            <div class="icon">🔊</div>
+            <h3>Âm thanh &amp; rung</h3>
+            <p>Âm báo đúng/sai, rung khi sai, tự động phát âm từ — tất cả đều bật/tắt được trong Cài đặt.</p>
+          </div>
+          <div class="card reveal">
+            <div class="icon">📴</div>
+            <h3>Dùng offline</h3>
+            <p>Sổ từ của bạn lưu ngay trên máy, không cần đăng nhập, không cần mạng vẫn học được.</p>
+          </div>
+        </div>
       </div>
+    </section>
+
+    <section id="mau-excel">
+      <div class="wrap">
+        <h2>Mẫu file nhập từ vựng (Excel &amp; CSV)</h2>
+        <p class="lead">Tải file mẫu để tự điền từ vựng của bạn hoặc tải sẵn bộ từ vựng theo chủ đề để nhập hàng loạt
+          vào ứng dụng.</p>
+        <div class="grid excel-grid">
+          <div class="card reveal">
+            <div class="icon">📄</div>
+            <h3>Mẫu 2 cột (Excel)</h3>
+            <p>Cột A = từ ngoại ngữ, Cột B = nghĩa tiếng Việt.<br />Dành cho sổ từ cá nhân khi cần nhập nhanh gọn.</p>
+            <a class="btn btn-solid" href="assets/mau-tu-vung-2-cot.xlsx" download>&#8681; Tải mẫu 2 cột (.xlsx)</a>
+          </div>
+          <div class="card reveal">
+            <div class="icon">📊</div>
+            <h3>Mẫu 4 cột (Excel)</h3>
+            <p>Cột A = từ, B = từ loại (n/v/adj…), C = nghĩa, D = phiên âm.<br />Đầy đủ thông tin chuẩn cho sổ từ cá
+              nhân.</p>
+            <a class="btn btn-solid" href="assets/mau-tu-vung-4-cot.xlsx" download>&#8681; Tải mẫu 4 cột (.xlsx)</a>
+          </div>
+          <div class="card reveal">
+            <div class="icon">🎯</div>
+            <h3>Mẫu theo chủ đề (CSV)</h3>
+            <p>Bộ từ Oxford 5000 (hơn 2.100 từ cấp độ B2, C1) có đủ phiên âm, loại từ, giải nghĩa, ví dụ song ngữ và chủ
+              đề.</p>
+            <a class="btn btn-solid" href="assets/oxford_5000_exclusive.csv" download>&#8681; Tải mẫu chủ đề (.csv)</a>
+          </div>
+        </div>
+        <div class="note">
+          <strong>Hướng dẫn nhập file vào ứng dụng:</strong>
+          <ul>
+            <li><strong>Sổ từ cá nhân (file .xlsx):</strong> Vào app chọn <strong>Quản lý từ vựng → Chọn tệp
+                Excel</strong> (hỗ trợ mẫu 2 cột và 4 cột). Hàng đầu là tiêu đề app tự nhận diện và bỏ qua. Dòng không
+              có nghĩa tiếng Việt sẽ tự động được lọc bỏ.</li>
+            <li><strong>Từ vựng theo chủ đề (file .csv):</strong> Vào tab <strong>Chủ đề → biểu tượng cài đặt Quản lý
+                (góc trên phải) → Nhập từ file CSV</strong>. Ứng dụng tự động nhận diện các cột: <code>word</code>,
+              <code>type</code>, <code>vietnamese</code>, <code>pronounce</code>, <code>explain</code>,
+              <code>example</code>, <code>example_vietnamese</code>, <code>topic</code>, <code>topic_vietnamese</code>
+              (và <code>topic_group</code>).
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="tai-ung-dung">
+      <div class="wrap">
+        <h2>Tải S English miễn phí</h2>
+      </div>
+    </section>
+
+    <section id="ve-chung-toi">
+      <div class="wrap">
+        <h2>Về chúng tôi</h2>
+        <p class="lead">Đội ngũ nhỏ, tình yêu lớn với việc học ngoại ngữ.</p>
+        <div class="about-card">
+          <p><strong>S English</strong> được phát triển bởi một nhóm nhỏ những người từng chật vật với việc học từ vựng:
+            ghi chép thì nhanh quên, app thì nặng nề và bắt đăng nhập đủ thứ. Chúng tôi muốn một cuốn sổ từ đơn giản —
+            mở lên là học được ngay, nhắc mình học mỗi ngày, và cho biết rõ mình yếu ở đâu.</p>
+          <p>Mọi góp ý, báo lỗi hay đề xuất tính năng mới đều rất quý với chúng tôi. Hãy liên hệ qua email <strong><a
+                href="mailto:support@senglish.app">support@senglish.app</a></strong>
+            <!-- TODO: thay bằng email liên hệ thật --> — chúng tôi đọc mọi thư và trả lời sớm nhất có thể.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>© 2026 S English</span>
+      <a href="terms.html">Điều khoản sử dụng</a>
+      <a href="huong-dan.html">Hướng dẫn sử dụng</a>
+      <a href="privacy.html">Chính sách &amp; quyền riêng tư</a>
+      <span class="right">Học một chút mỗi ngày 🌱</span>
     </div>
-    <div class="note">
-      <strong>Lưu ý:</strong> hàng đầu tiên là tiêu đề (có chữ “word”) nên app sẽ tự bỏ qua. Bỏ trống nghĩa thì dòng đó bị bỏ qua. Từ loại viết “n”, “danh từ”, “noun”… đều được app tự nhận dạng.
-    </div>
-  </div>
-</section>
+  </footer>
 
-<section id="tai-ung-dung">
-  <div class="wrap">
-    <h2>Tải S English miễn phí</h2>
-  </div>
-</section>
+  <script>
+    (function () {
+      var toggle = document.getElementById('navToggle');
+      var links = document.getElementById('navLinks');
+      if (!toggle || !links) return;
 
-<section id="ve-chung-toi">
-  <div class="wrap">
-    <h2>Về chúng tôi</h2>
-    <p class="lead">Đội ngũ nhỏ, tình yêu lớn với việc học ngoại ngữ.</p>
-    <div class="about-card">
-      <p><strong>S English</strong> được phát triển bởi một nhóm nhỏ những người từng chật vật với việc học từ vựng: ghi chép thì nhanh quên, app thì nặng nề và bắt đăng nhập đủ thứ. Chúng tôi muốn một cuốn sổ từ đơn giản — mở lên là học được ngay, nhắc mình học mỗi ngày, và cho biết rõ mình yếu ở đâu.</p>
-      <p>Mọi góp ý, báo lỗi hay đề xuất tính năng mới đều rất quý với chúng tôi. Hãy liên hệ qua email <strong><a href="mailto:support@senglish.app">support@senglish.app</a></strong> <!-- TODO: thay bằng email liên hệ thật --> — chúng tôi đọc mọi thư và trả lời sớm nhất có thể.</p>
-    </div>
-  </div>
-</section>
-
-</main>
-
-<footer>
-  <div class="wrap">
-    <span>© 2026 S English</span>
-    <a href="terms.html">Điều khoản sử dụng</a>
-    <a href="privacy.html">Chính sách &amp; quyền riêng tư</a>
-    <span class="right">Học một chút mỗi ngày 🌱</span>
-  </div>
-</footer>
-
-<script>
-  (function () {
-    var toggle = document.getElementById('navToggle');
-    var links = document.getElementById('navLinks');
-    if (!toggle || !links) return;
-
-    function setOpen(open) {
-      links.classList.toggle('open', open);
-      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-      toggle.setAttribute('aria-label', open ? 'Đóng menu' : 'Mở menu');
-    }
-    toggle.addEventListener('click', function () {
-      setOpen(toggle.getAttribute('aria-expanded') !== 'true');
-    });
-    links.addEventListener('click', function (e) {
-      if (e.target.closest('a')) setOpen(false);
-    });
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape') setOpen(false);
-    });
-    document.addEventListener('click', function (e) {
-      if (!e.target.closest('nav')) setOpen(false);
-    });
-    window.addEventListener('resize', function () {
-      if (window.innerWidth > 900) setOpen(false);
-    });
-
-    // Đánh dấu mục đang xem trong menu
-    var navAnchors = Array.prototype.slice.call(
-      links.querySelectorAll('a[href^="#"]')
-    );
-    var sections = navAnchors
-      .map(function (a) { return document.querySelector(a.getAttribute('href')); })
-      .filter(Boolean);
-
-    if ('IntersectionObserver' in window && sections.length) {
-      var spy = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          if (!entry.isIntersecting) return;
-          navAnchors.forEach(function (a) {
-            a.classList.toggle('is-active', a.getAttribute('href') === '#' + entry.target.id);
-          });
-        });
-      }, { rootMargin: '-45% 0px -50% 0px' });
-      sections.forEach(function (s) { spy.observe(s); });
-    }
-
-    // Hiệu ứng xuất hiện khi cuộn
-    var revealables = document.querySelectorAll('.reveal');
-    if ('IntersectionObserver' in window && revealables.length) {
-      var ro = new IntersectionObserver(function (entries, obs) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('in');
-            obs.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-      revealables.forEach(function (el, i) {
-        el.style.transitionDelay = (i % 3) * 70 + 'ms';
-        ro.observe(el);
+      function setOpen(open) {
+        links.classList.toggle('open', open);
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        toggle.setAttribute('aria-label', open ? 'Đóng menu' : 'Mở menu');
+      }
+      toggle.addEventListener('click', function () {
+        setOpen(toggle.getAttribute('aria-expanded') !== 'true');
       });
-    }
-  })();
-</script>
+      links.addEventListener('click', function (e) {
+        if (e.target.closest('a')) setOpen(false);
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') setOpen(false);
+      });
+      document.addEventListener('click', function (e) {
+        if (!e.target.closest('nav')) setOpen(false);
+      });
+      window.addEventListener('resize', function () {
+        if (window.innerWidth > 900) setOpen(false);
+      });
+
+      // Đánh dấu mục đang xem trong menu
+      var navAnchors = Array.prototype.slice.call(
+        links.querySelectorAll('a[href^="#"]')
+      );
+      var sections = navAnchors
+        .map(function (a) { return document.querySelector(a.getAttribute('href')); })
+        .filter(Boolean);
+
+      if ('IntersectionObserver' in window && sections.length) {
+        var spy = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            navAnchors.forEach(function (a) {
+              a.classList.toggle('is-active', a.getAttribute('href') === '#' + entry.target.id);
+            });
+          });
+        }, { rootMargin: '-45% 0px -50% 0px' });
+        sections.forEach(function (s) { spy.observe(s); });
+      }
+
+      // Hiệu ứng xuất hiện khi cuộn
+      var revealables = document.querySelectorAll('.reveal');
+      if ('IntersectionObserver' in window && revealables.length) {
+        var ro = new IntersectionObserver(function (entries, obs) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('in');
+              obs.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+        revealables.forEach(function (el, i) {
+          el.style.transitionDelay = (i % 3) * 70 + 'ms';
+          ro.observe(el);
+        });
+      }
+    })();
+  </script>
 
 </body>
+
 </html>
