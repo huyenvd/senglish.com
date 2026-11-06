@@ -423,11 +423,14 @@
 <!-- Feature Jump Bar -->
 <div class="feature-subnav">
   <div class="wrap">
-    <a class="subnav-chip" href="#tu-qua-man">⚡ 1. Tự qua màn vs Nút Tiếp theo</a>
+    <a class="subnav-chip" href="#tong-quan">📱 Tổng quan 4 Tab</a>
+    <a class="subnav-chip" href="#tu-qua-man">⚡ 1. Tự qua màn & Nút Tiếp theo</a>
     <a class="subnav-chip" href="#nhac-hoc">🔔 2. Thông báo nhắc học</a>
     <a class="subnav-chip" href="#ngon-ngu">🌐 3. Đổi ngôn ngữ học</a>
-    <a class="subnav-chip" href="#luyen-tap">🎯 4. 6 Chế độ luyện tập & Ôn từ sai</a>
-    <a class="subnav-chip" href="#chu-de">📚 5. Chủ đề & Thêm từ vựng</a>
+    <a class="subnav-chip" href="#thong-ke">📊 4. Thống kê học tập</a>
+    <a class="subnav-chip" href="#nhom-chu-de">📁 5. Nhóm từ vựng (Gom chủ đề)</a>
+    <a class="subnav-chip" href="#luyen-tap">🎯 6. 6 Chế độ luyện tập</a>
+    <a class="subnav-chip" href="#chu-de">📚 7. Thêm từ & Nhập Excel</a>
   </div>
 </div>
 
@@ -438,7 +441,7 @@
     <h1>Hướng dẫn sử dụng & Khám phá các tính năng nổi bật</h1>
     <p class="lead">
       Mô tả chi tiết từng bước thực hiện kèm <strong>ảnh chụp màn hình thực tế từ điện thoại Samsung Galaxy (SM-G960F)</strong>, 
-      giúp bạn hiểu rõ cách cài đặt tự qua màn, nhận thông báo nhắc học, đổi ngôn ngữ và ôn luyện thông minh.
+      giúp bạn hiểu rõ cách cài đặt tự qua màn, nhận thông báo nhắc học, đổi ngôn ngữ, theo dõi thống kê và ôn luyện thông minh.
     </p>
     <div class="device-note">
       📱 Toàn bộ ảnh minh họa bên dưới được chụp thực tế từ điện thoại đang kết nối (SM-G960F) &bull; Nhấp vào ảnh để phóng to.
@@ -447,6 +450,36 @@
 </header>
 
 <main class="wrap">
+
+  <!-- ================================================================= -->
+  <!-- 0. TỔNG QUAN 4 TAB CHÍNH -->
+  <!-- ================================================================= -->
+  <section class="guide-section" id="tong-quan" style="padding-top: 36px;">
+    <div style="background: #FFFFFF; border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; box-shadow: var(--shadow-sm);">
+      <div style="display: flex; gap: 24px; flex-wrap: wrap; align-items: center;">
+        <div style="flex: 1; min-width: 280px;">
+          <span class="tag" style="background: var(--teal-soft); color: var(--teal-dark); font-weight: 800; font-size: 12px; padding: 4px 10px; border-radius: 6px; text-transform: uppercase;">Cấu trúc ứng dụng</span>
+          <h2 style="font-size: 22px; font-weight: 800; margin: 10px 0 8px; color: var(--ink);">Giao diện 4 Tab Tiện ích trên SEnglish</h2>
+          <p style="font-size: 14.5px; color: var(--ink-2); line-height: 1.6; margin-bottom: 12px;">
+            Ứng dụng được thiết kế trực quan với thanh điều hướng 4 tab tiện lợi ở đáy màn hình:
+          </p>
+          <ul style="display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: var(--ink-2);">
+            <li>📖 <strong>Tab 1 - Từ vựng:</strong> Sổ từ vựng cá nhân, thêm từ mới và 6 chế độ luyện tập.</li>
+            <li>📁 <strong>Tab 2 - Chủ đề:</strong> Học từ vựng theo chủ đề, gom nhóm theo chứng chỉ (Toeic, CEFR, JLPT...).</li>
+            <li>📊 <strong>Tab 3 - Thống kê:</strong> Xem tỉ lệ nhớ đúng, 4 chỉ số và nút Ôn ngay từ đang làm sai.</li>
+            <li>⚙️ <strong>Tab 4 - Cài đặt:</strong> Tùy chỉnh tự qua màn, bật nhắc nhở, đổi ngoại ngữ và tải file mẫu Excel.</li>
+          </ul>
+        </div>
+        <div style="width: 230px; flex: none; margin: 0 auto;">
+          <div class="screenshot-frame" onclick="openModal('assets/guide/guide_home.png', 'Màn hình chính SEnglish với thanh điều hướng 4 tab')">
+            <img src="assets/guide/guide_home.png" alt="Giao diện chính 4 Tab SEnglish" loading="lazy" style="border-radius: 12px;" />
+            <span class="zoom-hint">🔍 Phóng to</span>
+          </div>
+          <p class="screenshot-caption" style="text-align: center; margin-top: 6px;">Ảnh chụp thực tế màn hình chính (SM-G960F)</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- ================================================================= -->
   <!-- 1. TỰ ĐỘNG QUA CÂU VS TỰ BẤM NÚT TIẾP THEO -->
@@ -719,11 +752,184 @@
   </section>
 
   <!-- ================================================================= -->
-  <!-- 4. 6 CHẾ ĐỘ LUYỆN TẬP & ÔN TỪ CHƯA THUỘC -->
+  <!-- 4. THỐNG KÊ HỌC TẬP & ÔN TỪ SAI -->
+  <!-- ================================================================= -->
+  <section class="guide-section" id="thong-ke">
+    <div class="section-header">
+      <span class="tag">Tiến độ & Hiệu quả #4</span>
+      <h2>Theo dõi Thống kê Học tập & Ôn lại Từ hay Sai</h2>
+      <p>
+        Tab <strong>"Thống kê"</strong> (biểu tượng đồ thị trên thanh điều hướng dưới) giúp bạn nắm bắt chính xác tỉ lệ nhớ đúng, 
+        tiến độ học từ cá nhân và từng chủ đề, đồng thời cung cấp tính năng <strong>Ôn ngay</strong> các từ đang còn yếu.
+      </p>
+    </div>
+
+    <div class="steps-grid">
+      <div class="step-card">
+        <span class="step-badge">1</span>
+        <h3>Tỉ lệ nhớ đúng & 4 chỉ số tổng quát</h3>
+        <p>
+          Thẻ Hero xanh ngọc hiển thị <strong>Tỉ lệ nhớ đúng (%)</strong>, thanh tiến độ số từ đã học trên tổng số từ trong sổ.<br />
+          Ngay bên dưới là 4 ô thống kê 2x2 trực quan:<br />
+          • <strong>Lượt đúng (Xanh lá):</strong> Tổng số câu trả lời chính xác.<br />
+          • <strong>Lượt sai (Đỏ hồng):</strong> Số lần chọn hoặc gõ sai.<br />
+          • <strong>Từ đã học (Xanh dương):</strong> Số từ bạn đã từng làm bài kiểm tra.<br />
+          • <strong>Từ đang sai (Cam vàng):</strong> Số từ bạn chưa ghi nhớ tốt.
+        </p>
+        <div class="screenshot-frame" onclick="openModal('assets/guide/guide_statistics_my_vocab.png', 'Thống kê Từ vựng của tôi')">
+          <img src="assets/guide/guide_statistics_my_vocab.png" alt="Thống kê Từ vựng của tôi" loading="lazy" />
+          <span class="zoom-hint">🔍 Phóng to</span>
+        </div>
+        <p class="screenshot-caption">Màn hình Thống kê - Phân hệ Từ vựng của tôi</p>
+      </div>
+
+      <div class="step-card">
+        <span class="step-badge">2</span>
+        <h3>Cảnh báo "Từ cần ôn tập lại" & Nút "Ôn ngay"</h3>
+        <p>
+          Khi bạn trả lời sai một từ trong bất kỳ bài tập nào, thẻ cảnh báo màu cam sẽ tự động xuất hiện: 
+          <em>"Có [x] từ bạn hay trả lời sai."</em><br />
+          Chỉ cần chạm nút <strong>"Ôn ngay"</strong> màu cam, ứng dụng lập tức mở bài luyện tập tập trung riêng cho các từ này 
+          để bạn khắc phục lỗ hổng ghi nhớ ngay tức thì!
+        </p>
+        <div class="screenshot-frame" onclick="openModal('assets/guide/guide_statistics_review_wrong.png', 'Màn hình Ôn lại từ sai khi bấm Ôn ngay')">
+          <img src="assets/guide/guide_statistics_review_wrong.png" alt="Màn hình Ôn lại từ sai" loading="lazy" />
+          <span class="zoom-hint">🔍 Phóng to</span>
+        </div>
+        <p class="screenshot-caption">Màn hình Ôn lại từ sai mở ngay sau khi bấm nút Ôn ngay</p>
+      </div>
+
+      <div class="step-card">
+        <span class="step-badge">3</span>
+        <h3>Thống kê phân hệ "Chủ đề"</h3>
+        <p>
+          Chạm vào nút chuyển đổi <strong>"Chủ đề"</strong> ở đầu trang Thống kê. 
+          Giao diện chuyển sang tông tím hiện đại, hiển thị tỉ lệ đúng của toàn bộ các chủ đề, 
+          số từ chủ đề đã học và số chủ đề thuộc các nhóm từ vựng.
+        </p>
+        <div class="screenshot-frame" onclick="openModal('assets/guide/guide_statistics_topics.png', 'Thống kê phân hệ Chủ đề')">
+          <img src="assets/guide/guide_statistics_topics.png" alt="Thống kê phân hệ Chủ đề" loading="lazy" />
+          <span class="zoom-hint">🔍 Phóng to</span>
+        </div>
+        <p class="screenshot-caption">Thẻ tổng quan tiến độ của toàn bộ hệ thống chủ đề</p>
+      </div>
+
+      <div class="step-card">
+        <span class="step-badge">4</span>
+        <h3>Bảng chi tiết tiến độ từng nhóm và chủ đề</h3>
+        <p>
+          Cuộn xuống dưới để xem báo cáo chi tiết theo từng nhóm: <strong>Khung năng lực châu Âu</strong> (B2 700 từ, C1 1314 từ), 
+          <strong>Toeic</strong> (50 chủ đề). Mỗi chủ đề hiển thị rõ trạng thái Đã học / Chưa học, số lượt đúng/sai 
+          và nút mở chi tiết thống kê.
+        </p>
+        <div class="screenshot-frame" onclick="openModal('assets/guide/guide_statistics_topics_breakdown.png', 'Chi tiết thống kê từng nhóm và từng chủ đề')">
+          <img src="assets/guide/guide_statistics_topics_breakdown.png" alt="Chi tiết từng nhóm chủ đề" loading="lazy" />
+          <span class="zoom-hint">🔍 Phóng to</span>
+        </div>
+        <p class="screenshot-caption">Bảng chi tiết tiến độ từng nhóm chủ đề và bài học nhỏ</p>
+      </div>
+    </div>
+
+    <div class="tip-box">
+      <span class="tip-icon">💡</span>
+      <div>
+        <strong>Dữ liệu thời gian thực:</strong> Số lượt đúng/sai và tỉ lệ phần trăm được cập nhật tự động ngay sau mỗi câu hỏi 
+        trong bất kỳ chế độ luyện tập nào. Bạn luôn theo dõi được sự tiến bộ rõ rệt mỗi ngày!
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================= -->
+  <!-- 5. NHÓM TỪ VỰNG & GOM CHỦ ĐỀ -->
+  <!-- ================================================================= -->
+  <section class="guide-section" id="nhom-chu-de">
+    <div class="section-header">
+      <span class="tag">Gom nhóm thông minh #5</span>
+      <h2>Nhóm Từ Vựng & Gom Chủ Đề Chuyên Biệt</h2>
+      <p>
+        Dễ dàng phân loại và chọn lọc kho tài nguyên phong phú theo từng mục tiêu học tập cụ thể: 
+        <strong>Toeic</strong> (50 chủ đề &bull; 615 từ), <strong>Khung năng lực châu Âu CEFR</strong> (B2, C1 &bull; 2014 từ), 
+        hoặc <strong>Tiếng Nhật JLPT (N5, N4, N3)</strong>.
+      </p>
+    </div>
+
+    <div class="steps-grid">
+      <div class="step-card">
+        <span class="step-badge">1</span>
+        <h3>Chọn nhóm từ vựng qua Dropdown selector</h3>
+        <p>
+          Tại tab <strong>"Chủ đề"</strong> (tab thứ 2 trên thanh điều hướng dưới), 
+          chạm vào ô <strong>"Nhóm từ vựng"</strong> ở góc trên bên trái.<br />
+          Menu dropdown sẽ mở ra với các nhóm có sẵn kèm biểu tượng sinh động và tổng số chủ đề/từ vựng của từng nhóm.
+        </p>
+        <div class="screenshot-frame" onclick="openModal('assets/guide/guide_topic_groups_selector.png', 'Menu chọn nhóm từ vựng')">
+          <img src="assets/guide/guide_topic_groups_selector.png" alt="Menu chọn nhóm từ vựng" loading="lazy" />
+          <span class="zoom-hint">🔍 Phóng to</span>
+        </div>
+        <p class="screenshot-caption">Menu chọn nhóm từ vựng trực quan (Toeic, CEFR, Tất cả nhóm...)</p>
+      </div>
+
+      <div class="step-card">
+        <span class="step-badge">2</span>
+        <h3>Lọc gọn gàng theo nhóm đã chọn</h3>
+        <p>
+          Khi bạn chọn một nhóm (ví dụ: <em>Khung năng lực châu Âu</em>), màn hình sẽ lập tức lọc và chỉ hiển thị 
+          các chủ đề thuộc nhóm đó (B2 - 700 từ, C1 - 1314 từ).<br />
+          Huy hiệu góc trên bên phải báo rõ: <em>"2 chủ đề &bull; 2014 từ vựng"</em>, giúp bạn tập trung cao độ vào đúng lộ trình ôn luyện.
+        </p>
+        <div class="screenshot-frame" onclick="openModal('assets/guide/guide_topic_group_filtered.png', 'Danh sách chủ đề lọc theo nhóm CEFR')">
+          <img src="assets/guide/guide_topic_group_filtered.png" alt="Chủ đề lọc theo nhóm" loading="lazy" />
+          <span class="zoom-hint">🔍 Phóng to</span>
+        </div>
+        <p class="screenshot-caption">Màn hình sau khi lọc theo nhóm Khung năng lực châu Âu</p>
+      </div>
+
+      <div class="step-card">
+        <span class="step-badge">3</span>
+        <h3>Khám phá hơn 50 chủ đề Toeic đầy đủ</h3>
+        <p>
+          Khi chọn nhóm <strong>Toeic</strong>, bạn có trong tay trọn vẹn 50 chủ đề thông dụng nhất trong bài thi Toeic: 
+          Kế toán, Hàng không, Phỏng vấn, Ngân hàng, Họp hội đồng, Kinh doanh, Thuê xe, Máy tính...<br />
+          Thẻ màu rực rỡ và biểu tượng 3D giúp bạn dễ dàng nhận diện và tạo hứng thú học tập.
+        </p>
+        <div class="screenshot-frame" onclick="openModal('assets/guide/guide_topics_tab.png', 'Hơn 50 chủ đề Toeic đa dạng')">
+          <img src="assets/guide/guide_topics_tab.png" alt="Lưới chủ đề Toeic phong phú" loading="lazy" />
+          <span class="zoom-hint">🔍 Phóng to</span>
+        </div>
+        <p class="screenshot-caption">Lưới chủ đề Toeic 3 cột màu sắc bắt mắt kèm số lượng từ</p>
+      </div>
+
+      <div class="step-card">
+        <span class="step-badge">4</span>
+        <h3>Xem từ vựng, nghe phát âm & Quản lý dữ liệu</h3>
+        <p>
+          Chạm vào chủ đề để mở bảng từ vựng chi tiết, nghe phát âm giọng bản xứ và bấm <strong>"Ôn tập"</strong>.<br />
+          Ngoài ra, biểu tượng bộ lọc <strong>[tune]</strong> trên thanh tiêu đề cho phép bạn vào màn hình 
+          <strong>Quản lý dữ liệu chủ đề</strong> để kiểm tra nguồn từ vựng bất cứ lúc nào!
+        </p>
+        <div class="screenshot-frame" onclick="openModal('assets/guide/guide_topic_words_sheet.png', 'Bảng từ vựng chi tiết của chủ đề')">
+          <img src="assets/guide/guide_topic_words_sheet.png" alt="Bảng từ vựng chi tiết" loading="lazy" />
+          <span class="zoom-hint">🔍 Phóng to</span>
+        </div>
+        <p class="screenshot-caption">Bảng từ vựng chi tiết kèm phiên âm IPA chuẩn và nút Ôn tập</p>
+      </div>
+    </div>
+
+    <div class="tip-box">
+      <span class="tip-icon">📚</span>
+      <div>
+        <strong>Phù hợp cho mọi kỳ thi:</strong> Tính năng Gom nhóm chủ đề giúp người học Toeic, IELTS, CEFR hay JLPT 
+        không bị lẫn lộn giữa các bộ từ, học có định hướng và đạt kết quả thi cao nhất!
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================= -->
+  <!-- 6. 6 CHẾ ĐỘ LUYỆN TẬP & ÔN TỪ CHƯA THUỘC -->
   <!-- ================================================================= -->
   <section class="guide-section" id="luyen-tap">
     <div class="section-header">
-      <span class="tag">Phương pháp học #4</span>
+      <span class="tag">Phương pháp học #6</span>
       <h2>6 Chế độ Luyện tập & Ôn đúng từ Chưa thuộc</h2>
       <p>
         Thay vì chỉ lướt thẻ từ vựng một cách thụ động, SEnglish cung cấp 6 cách kiểm tra tương tác đa giác quan 
@@ -808,60 +1014,59 @@
   </section>
 
   <!-- ================================================================= -->
-  <!-- 5. HỌC THEO CHỦ ĐỀ & THÊM TỪ VỰNG -->
+  <!-- 7. QUẢN LÝ TỪ VỰNG & NHẬP TỆP EXCEL -->
   <!-- ================================================================= -->
   <section class="guide-section" id="chu-de">
     <div class="section-header">
-      <span class="tag">Kho tài nguyên #5</span>
-      <h2>Học theo 50 Chủ đề & Xây sổ từ vựng (Nhập Excel)</h2>
+      <span class="tag">Kho tài nguyên #7</span>
+      <h2>Quản lý Sổ Từ Vựng & Thêm từ hàng loạt qua Excel</h2>
       <p>
-        SEnglish cung cấp sẵn hơn 50 chủ đề từ vựng Toeic thông dụng (615 từ), 
-        đồng thời hỗ trợ bạn thêm từ thủ công tra phiên âm tự động hoặc nhập hàng loạt từ Excel.
+        Chủ động mở rộng sổ từ vựng cá nhân: Tự thêm từ mới kèm phiên âm IPA chuẩn tra cứu tự động, 
+        hoặc nạp hàng trăm từ cùng lúc thông qua tệp bảng tính Excel (.xlsx / .xls).
       </p>
     </div>
 
     <div class="steps-grid">
       <div class="step-card">
         <span class="step-badge">1</span>
-        <h3>Tab "Chủ đề": Hơn 50 danh mục chuyên ngành</h3>
+        <h3>Vào "Quản lý từ vựng" từ Tab Từ vựng</h3>
         <p>
-          Chạm vào tab <strong>"Chủ đề"</strong> trên thanh điều hướng dưới cùng. 
-          Các chủ đề được trình bày trực quan bằng các thẻ màu sắc (Kế toán, Hàng không, Ứng tuyển & Phỏng vấn, Ngân hàng...).
+          Tại tab <strong>"Từ vựng"</strong> (tab đầu tiên), chạm vào nút xanh <strong>"Quản lý từ vựng"</strong> 
+          để xem toàn bộ danh sách từ trong sổ, tìm kiếm từ nhanh và chỉnh sửa khi cần.
         </p>
-        <div class="screenshot-frame" onclick="openModal('assets/guide/guide_topics_tab.png', 'Hơn 50 chủ đề từ vựng Toeic')">
-          <img src="assets/guide/guide_topics_tab.png" alt="Tab Học theo chủ đề" loading="lazy" />
+        <div class="screenshot-frame" onclick="openModal('assets/guide/guide_manage_vocab.png', 'Danh sách sổ từ vựng cá nhân')">
+          <img src="assets/guide/guide_manage_vocab.png" alt="Quản lý từ vựng" loading="lazy" />
           <span class="zoom-hint">🔍 Phóng to</span>
         </div>
-        <p class="screenshot-caption">Giao diện Học theo chủ đề với thẻ màu sinh động</p>
+        <p class="screenshot-caption">Màn hình Quản lý sổ từ vựng cá nhân</p>
       </div>
 
       <div class="step-card">
         <span class="step-badge">2</span>
-        <h3>Chi tiết chủ đề & Luyện tập ngay</h3>
+        <h3>Thêm từ thủ công với tính năng tra IPA tự động</h3>
         <p>
-          Chạm vào chủ đề để mở danh sách từ vựng. Bạn có thể nghe phát âm chuẩn của từng từ, 
-          xem phiên âm IPA, nghĩa tiếng Việt và bấm <strong>"Ôn tập [x] từ của chủ đề"</strong> để bắt đầu kiểm tra.
+          Bấm biểu tượng dấu cộng <strong>(+)</strong> hoặc nút thêm từ. Nhập từ vựng, hệ thống sẽ tự động tra 
+          phiên âm chuẩn quốc tế IPA và nghĩa tiếng Việt tương ứng, bạn không phải gõ tay phiên âm!
         </p>
-        <div class="screenshot-frame" onclick="openModal('assets/guide/guide_topic_words_sheet.png', 'Chi tiết từ vựng chủ đề Kế toán')">
-          <img src="assets/guide/guide_topic_words_sheet.png" alt="Chi tiết từ vựng chủ đề" loading="lazy" />
+        <div class="screenshot-frame" onclick="openModal('assets/guide/guide_add_word.png', 'Thêm từ vựng mới tự tra IPA')">
+          <img src="assets/guide/guide_add_word.png" alt="Thêm từ vựng" loading="lazy" />
           <span class="zoom-hint">🔍 Phóng to</span>
         </div>
-        <p class="screenshot-caption">Bảng từ vựng chi tiết kèm phiên âm IPA và nút ôn tập</p>
+        <p class="screenshot-caption">Giao diện thêm từ tự tra IPA và nghĩa</p>
       </div>
 
       <div class="step-card">
         <span class="step-badge">3</span>
-        <h3>Thêm từ thủ công & Nhập tệp Excel</h3>
+        <h3>Nhập hàng loạt từ file Excel (.xlsx / .xls)</h3>
         <p>
-          Trong <strong>Quản lý từ vựng</strong>:<br />
-          • <strong>Nhập thủ công:</strong> Gõ từ tiếng Anh, app tự động tra và điền phiên âm IPA, nghĩa và từ loại.<br />
-          • <strong>Nhập từ Excel (.xlsx / .xls):</strong> Hỗ trợ file 2 cột hoặc 4 cột để nạp hàng trăm từ cùng lúc trong tích tắc!
+          Bấm <strong>"Nhập từ Excel"</strong> để chọn file từ điện thoại của bạn. Hỗ trợ file 2 cột hoặc 4 cột.<br />
+          👉 Bạn có thể tải file mẫu chuẩn ngay tại tab Cài đặt hoặc trên trang web SEnglish.
         </p>
-        <div class="screenshot-frame" onclick="openModal('assets/guide/guide_add_word.png', 'Khung nhập từ thủ công và chọn file Excel')">
-          <img src="assets/guide/guide_add_word.png" alt="Thêm từ vựng và nhập Excel" loading="lazy" />
+        <div class="screenshot-frame" onclick="openModal('assets/guide/guide_manage_vocab.png', 'Nút nhập từ file Excel')">
+          <img src="assets/guide/guide_manage_vocab.png" alt="Nhập từ vựng từ Excel" loading="lazy" />
           <span class="zoom-hint">🔍 Phóng to</span>
         </div>
-        <p class="screenshot-caption">Khung nhập từ tự tra IPA và nút chọn file Excel</p>
+        <p class="screenshot-caption">Nút nhập Excel nằm ngay trên đầu màn hình Quản lý từ vựng</p>
       </div>
     </div>
   </section>
