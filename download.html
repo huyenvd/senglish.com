@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Tải ứng dụng S English — App Store & Google Play</title>
+  <meta name="description" content="Tải ngay S English: sổ tay từ vựng tiếng Anh thông minh trên iOS và Android." />
+  <meta name="theme-color" content="#0F766E" />
+  <link rel="icon" type="image/png" href="assets/app-icon-192.png" />
+  <script>
+    (function () {
+      var ua = navigator.userAgent || navigator.vendor || window.opera;
+      var isIOS = /iPad|iPhone|iPod/.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+      var isAndroid = /Android/i.test(ua);
+      var iosUrl = 'https://apps.apple.com/vn/app/s-english/id6817701122';
+      var androidUrl = 'https://play.google.com/store/apps/details?id=com.senglish.free';
+
+      if (isIOS) {
+        window.location.replace(iosUrl);
+      } else if (isAndroid) {
+        window.location.replace(androidUrl);
+      }
+    })();
+  </script>
+  <style>
+    :root {
+      --teal-dark: #0F766E;
+      --teal: #14B8A6;
+      --teal-light: #2DD4BF;
+      --ink: #0F172A;
+      --muted: #5E6C7C;
+      --bg: #0B1F1D;
+      --card-bg: rgba(255, 255, 255, .08);
+      --border: rgba(255, 255, 255, .16);
+      --radius: 20px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: radial-gradient(800px 400px at 50% 0%, rgba(45, 212, 191, .25), transparent 70%), var(--bg);
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 680px;
+      width: 100%;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 36px 24px;
+      backdrop-filter: blur(16px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, .4);
+    }
+
+    .brand-logo {
+      width: 64px;
+      height: 64px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, var(--teal-light), var(--teal-dark));
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      font-weight: 800;
+      color: #fff;
+      box-shadow: 0 8px 24px rgba(20, 184, 166, .35);
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-size: 26px;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    p.lead {
+      color: #A7F3D0;
+      font-size: 15px;
+      margin-bottom: 28px;
+    }
+
+    .store-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .store-card {
+      background: rgba(255, 255, 255, .05);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: transform .2s ease, background-color .2s ease;
+    }
+
+    .store-card:hover {
+      transform: translateY(-3px);
+      background: rgba(255, 255, 255, .1);
+    }
+
+    .store-card h2 {
+      font-size: 17px;
+      margin-bottom: 4px;
+    }
+
+    .store-card small {
+      color: #94A3B8;
+      font-size: 13px;
+      margin-bottom: 14px;
+    }
+
+    .qr-link {
+      display: inline-block;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .store-card img.qr {
+      width: 140px;
+      height: 140px;
+      border-radius: 12px;
+      background: #fff;
+      padding: 6px;
+      margin-bottom: 8px;
+      transition: transform .2s ease;
+    }
+
+    .qr-link:hover img.qr {
+      transform: scale(1.05);
+    }
+
+    .qr-tap-hint {
+      display: block;
+      font-size: 11.5px;
+      color: #A7F3D0;
+      margin-bottom: 14px;
+    }
+
+    .btn-store {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      padding: 12px 16px;
+      border-radius: 12px;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      background: #fff;
+      color: #0B1F1D;
+      transition: background .2s ease, transform .2s ease;
+    }
+
+    .btn-store:hover {
+      background: #E2E8F0;
+      transform: translateY(-2px);
+    }
+
+    .btn-store svg {
+      width: 20px;
+      height: 20px;
+      flex: none;
+    }
+
+    .back-home {
+      display: inline-block;
+      margin-top: 12px;
+      color: #94A3B8;
+      font-size: 14px;
+      text-decoration: none;
+      transition: color .2s ease;
+    }
+
+    .back-home:hover {
+      color: #fff;
+    }
+
+    @media (max-width: 540px) {
+      .store-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .container {
+        padding: 28px 16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="brand-logo">S</div>
+    <h1>Tải ứng dụng S English</h1>
+    <p class="lead">Sổ tay từ vựng đa ngôn ngữ thông minh • Học mọi lúc, mọi nơi</p>
+
+    <div class="store-grid">
+      <!-- Apple Store -->
+      <div class="store-card" id="cardIOS">
+        <h2>Dành cho iPhone &amp; iPad</h2>
+        <small>Yêu cầu iOS 13.0 trở lên</small>
+        <a class="qr-link" href="https://apps.apple.com/vn/app/s-english/id6817701122" target="_blank" rel="noopener" title="Chạm để mở App Store">
+          <img class="qr" src="assets/qr-ios.png" alt="Mã QR App Store" width="140" height="140" />
+          <span class="qr-tap-hint">Chạm hoặc quét QR để mở</span>
+        </a>
+        <a class="btn-store" href="https://apps.apple.com/vn/app/s-english/id6817701122" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.61-.75 1.04-1.8 0.92-2.85-.9.04-2.02.6-2.67 1.35-.57.65-1.07 1.71-.93 2.73 1.01.08 2.06-.51 2.68-1.23z"/>
+          </svg>
+          Tải trên App Store
+        </a>
+      </div>
+
+      <!-- Google Play -->
+      <div class="store-card" id="cardAndroid">
+        <h2>Dành cho Android</h2>
+        <small>Yêu cầu Android 6.0 trở lên</small>
+        <a class="qr-link" href="https://play.google.com/store/apps/details?id=com.senglish.free" target="_blank" rel="noopener" title="Chạm để mở Google Play">
+          <img class="qr" src="assets/qr-android.png" alt="Mã QR Google Play" width="140" height="140" />
+          <span class="qr-tap-hint">Chạm hoặc quét QR để mở</span>
+        </a>
+        <a class="btn-store" href="https://play.google.com/store/apps/details?id=com.senglish.free" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M3.609 1.814L13.793 12 3.61 22.186a2.072 2.072 0 0 1-.61-.954V2.768c.15-.36.372-.69.61-.954zm11.242 11.243l2.257 2.257-11.45 6.442 9.193-8.699zm0-2.114L5.658 2.244l11.45 6.442-2.257 2.257zm1.485 1.057l3.657 2.057c.75.422.75 1.11 0 1.532l-3.657 2.057-2.07-2.07 2.07-2.076z"/>
+          </svg>
+          Tải trên Google Play
+        </a>
+      </div>
+    </div>
+
+    <a class="back-home" href="./">← Quay lại trang chủ S English</a>
+  </div>
+</body>
+
+</html>
+

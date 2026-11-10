@@ -674,7 +674,7 @@
     .dl-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 18px;
+      gap: 20px;
       max-width: 780px;
       margin: 0 auto;
     }
@@ -688,43 +688,232 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      transition: transform .22s ease, background-color .22s ease;
+      position: relative;
+      transition: transform .22s ease, background-color .22s ease, border-color .22s ease, box-shadow .22s ease;
     }
 
     .dl-card:hover {
       transform: translateY(-4px);
-      background: rgba(255, 255, 255, .11);
+      background: rgba(255, 255, 255, .12);
+      border-color: rgba(45, 212, 191, .5);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, .3);
+    }
+
+    .dl-card.is-detected {
+      border-color: var(--teal-light);
+      background: rgba(45, 212, 191, .12);
+      box-shadow: 0 0 0 2px rgba(45, 212, 191, .35), 0 16px 36px rgba(0, 0, 0, .35);
+    }
+
+    .dl-badge-detected {
+      position: absolute;
+      top: -12px;
+      background: linear-gradient(135deg, var(--teal-light), var(--teal-dark));
+      color: #fff;
+      font-size: 11.5px;
+      font-weight: 800;
+      padding: 3px 12px;
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, .3);
+      letter-spacing: .3px;
+      display: none;
+    }
+
+    .dl-card.is-detected .dl-badge-detected {
+      display: inline-block;
     }
 
     .dl-card h3 {
       font-size: 20px;
       margin-bottom: 4px;
+      color: #fff;
     }
 
     .dl-card p {
       color: #A7F3D0;
-      font-size: 14px;
+      font-size: 13.5px;
+      margin-bottom: 16px;
+    }
+
+    .qr-link {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      text-decoration: none;
+      cursor: pointer;
       margin-bottom: 18px;
+      transition: transform .2s ease;
+    }
+
+    .qr-link:hover {
+      transform: scale(1.04);
     }
 
     .dl-card img.qr {
       width: 170px;
-      height: auto;
+      height: 170px;
       border-radius: 14px;
       background: #fff;
-      padding: 6px;
+      padding: 8px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, .3);
     }
 
-    .dl-card .btn {
-      margin-top: 18px;
+    .qr-hint {
+      display: inline-block;
+      margin-top: 8px;
+      font-size: 12px;
+      color: #A7F3D0;
+      opacity: .85;
+      transition: opacity .2s ease;
+    }
+
+    .qr-link:hover .qr-hint {
+      opacity: 1;
+      text-decoration: underline;
+    }
+
+    .btn-store {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
       width: 100%;
+      padding: 13px 20px;
+      border-radius: 12px;
+      font-size: 15px;
+      font-weight: 700;
+      text-decoration: none;
+      background: #FFFFFF;
+      color: #0B1F1D;
+      transition: transform .2s ease, background-color .2s ease, box-shadow .2s ease;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, .2);
+    }
+
+    .btn-store:hover {
+      background: #F1F5F9;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, .3);
+    }
+
+    .btn-store svg {
+      width: 22px;
+      height: 22px;
+      flex: none;
+    }
+
+    .os-detect-banner {
+      max-width: 620px;
+      margin: 0 auto 28px;
+      background: rgba(255, 255, 255, .08);
+      border: 1px solid rgba(255, 255, 255, .16);
+      border-radius: 14px;
+      padding: 12px 20px;
+      text-align: center;
+      font-size: 14px;
+      color: #E2E8F0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .os-detect-banner strong {
+      color: #2DD4BF;
+    }
+
+    .os-detect-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 14px;
+      background: var(--teal-light);
+      color: #0B1F1D;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 13px;
+      text-decoration: none;
+      transition: background-color .2s ease;
+    }
+
+    .os-detect-btn:hover {
+      background: #fff;
+    }
+
+    .hero-stores-row {
+      display: flex;
+      gap: 10px;
+      margin-top: 14px;
+      flex-wrap: wrap;
+    }
+
+    .hero-store-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, .12);
+      border: 1px solid rgba(255, 255, 255, .25);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background-color .2s ease, transform .2s ease;
+    }
+
+    .hero-store-chip:hover {
+      background: rgba(255, 255, 255, .22);
+      transform: translateY(-2px);
+    }
+
+    .hero-store-chip svg {
+      width: 18px;
+      height: 18px;
+      fill: currentColor;
+      flex: none;
     }
 
     .dl-note {
       text-align: center;
       color: #A7F3D0;
-      font-size: 14px;
+      font-size: 13.5px;
       margin-top: 26px;
+      line-height: 1.6;
+    }
+
+    .universal-qr-box {
+      max-width: 520px;
+      margin: 28px auto 0;
+      background: rgba(255, 255, 255, .05);
+      border: 1px dashed rgba(255, 255, 255, .25);
+      border-radius: 14px;
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      text-align: left;
+    }
+
+    .universal-qr-box img {
+      width: 76px;
+      height: 76px;
+      border-radius: 8px;
+      background: #fff;
+      padding: 4px;
+      flex: none;
+    }
+
+    .universal-qr-box div {
+      font-size: 13px;
+      color: #E2E8F0;
+    }
+
+    .universal-qr-box strong {
+      color: #2DD4BF;
+      display: block;
+      margin-bottom: 2px;
+      font-size: 14px;
     }
 
     @media (max-width: 620px) {
@@ -734,6 +923,12 @@
 
       .dl-card img.qr {
         width: 190px;
+        height: 190px;
+      }
+
+      .universal-qr-box {
+        flex-direction: column;
+        text-align: center;
       }
     }
 
@@ -856,8 +1051,18 @@
         <p class="sub">Ghi lại từ mới, luyện tập mỗi ngày với 6 chế độ thú vị và nhớ từ lâu hơn — tất cả trong một ứng
           dụng gọn nhẹ.</p>
         <div class="cta-row">
-          <a class="btn btn-light" href="#tai-ung-dung">&#8681; Tải ứng dụng miễn phí</a>
+          <a class="btn btn-light" id="heroSmartBtn" href="#tai-ung-dung">&#8681; Tải ứng dụng miễn phí</a>
           <a class="btn btn-outline" href="huong-dan.html">📖 Cẩm nang hướng dẫn chi tiết</a>
+        </div>
+        <div class="hero-stores-row">
+          <a class="hero-store-chip" href="https://apps.apple.com/vn/app/s-english/id6817701122" target="_blank" rel="noopener" title="Tải S English trên App Store">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.61-.75 1.04-1.8 0.92-2.85-.9.04-2.02.6-2.67 1.35-.57.65-1.07 1.71-.93 2.73 1.01.08 2.06-.51 2.68-1.23z"/></svg>
+            App Store
+          </a>
+          <a class="hero-store-chip" href="https://play.google.com/store/apps/details?id=com.senglish.free" target="_blank" rel="noopener" title="Tải S English trên Google Play">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.609 1.814L13.793 12 3.61 22.186a2.072 2.072 0 0 1-.61-.954V2.768c.15-.36.372-.69.61-.954zm11.242 11.243l2.257 2.257-11.45 6.442 9.193-8.699zm0-2.114L5.658 2.244l11.45 6.442-2.257 2.257zm1.485 1.057l3.657 2.057c.75.422.75 1.11 0 1.532l-3.657 2.057-2.07-2.07 2.07-2.076z"/></svg>
+            Google Play
+          </a>
         </div>
         <div class="hero-stats">
           <div><strong>6</strong><span>chế độ luyện tập</span></div>
@@ -1015,6 +1220,64 @@
     <section id="tai-ung-dung">
       <div class="wrap">
         <h2>Tải S English miễn phí</h2>
+        <p class="lead">Học từ vựng thông minh mỗi ngày • Dùng 100% offline • Không cần đăng ký tài khoản</p>
+
+        <!-- Dynamic OS Detector Banner -->
+        <div class="os-detect-banner" id="osDetectBanner" style="display: none;">
+          <span id="osDetectIcon">📱</span>
+          <span id="osDetectText">Phát hiện thiết bị của bạn...</span>
+          <a class="os-detect-btn" id="osDetectBtn" href="#" target="_blank" rel="noopener">Mở Store tải ngay →</a>
+        </div>
+
+        <div class="dl-grid">
+          <!-- iOS Card -->
+          <div class="dl-card" id="cardIos">
+            <span class="dl-badge-detected">✨ Thiết bị của bạn</span>
+            <h3>iPhone &amp; iPad</h3>
+            <p>iOS 13.0 trở lên • App Store</p>
+            <a class="qr-link" href="https://apps.apple.com/vn/app/s-english/id6817701122" target="_blank" rel="noopener" title="Chạm hoặc quét mã QR để mở App Store">
+              <img class="qr" src="assets/qr-ios.png" alt="Mã QR tải S English trên App Store" width="170" height="170" loading="lazy" />
+              <span class="qr-hint">Chạm hoặc quét QR để mở</span>
+            </a>
+            <a class="btn-store" href="https://apps.apple.com/vn/app/s-english/id6817701122" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.61-.75 1.04-1.8 0.92-2.85-.9.04-2.02.6-2.67 1.35-.57.65-1.07 1.71-.93 2.73 1.01.08 2.06-.51 2.68-1.23z"/>
+              </svg>
+              Tải trên App Store
+            </a>
+          </div>
+
+          <!-- Android Card -->
+          <div class="dl-card" id="cardAndroid">
+            <span class="dl-badge-detected">✨ Thiết bị của bạn</span>
+            <h3>Android</h3>
+            <p>Android 6.0 trở lên • Google Play</p>
+            <a class="qr-link" href="https://play.google.com/store/apps/details?id=com.senglish.free" target="_blank" rel="noopener" title="Chạm hoặc quét mã QR để mở Google Play">
+              <img class="qr" src="assets/qr-android.png" alt="Mã QR tải S English trên Google Play" width="170" height="170" loading="lazy" />
+              <span class="qr-hint">Chạm hoặc quét QR để mở</span>
+            </a>
+            <a class="btn-store" href="https://play.google.com/store/apps/details?id=com.senglish.free" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M3.609 1.814L13.793 12 3.61 22.186a2.072 2.072 0 0 1-.61-.954V2.768c.15-.36.372-.69.61-.954zm11.242 11.243l2.257 2.257-11.45 6.442 9.193-8.699zm0-2.114L5.658 2.244l11.45 6.442-2.257 2.257zm1.485 1.057l3.657 2.057c.75.422.75 1.11 0 1.532l-3.657 2.057-2.07-2.07 2.07-2.076z"/>
+              </svg>
+              Tải trên Google Play
+            </a>
+          </div>
+        </div>
+
+        <!-- Universal Smart QR Box -->
+        <a class="universal-qr-box qr-link" href="download.html" target="_blank" rel="noopener" title="Mã QR chuyển hướng thông minh">
+          <img src="assets/qr-universal.png" alt="Mã QR thông minh tự nhận diện hệ điều hành" width="76" height="76" loading="lazy" />
+          <div>
+            <strong>Mã QR chuyển hướng thông minh</strong>
+            Quét mã duy nhất bằng camera điện thoại, hệ thống sẽ tự động chuyển hướng đến đúng App Store (iOS) hoặc Google Play (Android).
+          </div>
+        </a>
+
+        <p class="dl-note">
+          ✓ Dùng hoàn toàn miễn phí &bull; Không quảng cáo che mất bài học<br />
+          ✓ Hoạt động 100% offline ngay cả khi không có mạng Internet.
+        </p>
       </div>
     </section>
 
@@ -1108,6 +1371,78 @@
           ro.observe(el);
         });
       }
+
+      // Tự động nhận diện thiết bị & thông minh hóa nút tải / QR
+      (function () {
+        var ua = navigator.userAgent || navigator.vendor || window.opera;
+        var isIOS = /iPad|iPhone|iPod/.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+        var isAndroid = /Android/i.test(ua);
+        var iosUrl = 'https://apps.apple.com/vn/app/s-english/id6817701122';
+        var androidUrl = 'https://play.google.com/store/apps/details?id=com.senglish.free';
+
+        var cardIos = document.getElementById('cardIos');
+        var cardAndroid = document.getElementById('cardAndroid');
+        var banner = document.getElementById('osDetectBanner');
+        var bannerIcon = document.getElementById('osDetectIcon');
+        var bannerText = document.getElementById('osDetectText');
+        var bannerBtn = document.getElementById('osDetectBtn');
+        var heroBtn = document.getElementById('heroSmartBtn');
+        var navCta = document.querySelector('nav .nav-cta');
+
+        if (isIOS) {
+          if (cardIos) cardIos.classList.add('is-detected');
+          if (banner) {
+            banner.style.display = 'flex';
+            if (bannerIcon) bannerIcon.textContent = '';
+            if (bannerText) bannerText.innerHTML = 'Thiết bị của bạn: <strong>iPhone / iPad</strong>';
+            if (bannerBtn) {
+              bannerBtn.textContent = 'Mở App Store tải ngay →';
+              bannerBtn.href = iosUrl;
+            }
+          }
+          if (heroBtn) {
+            heroBtn.innerHTML = ' Tải trên App Store';
+            heroBtn.href = iosUrl;
+            heroBtn.target = '_blank';
+            heroBtn.rel = 'noopener';
+          }
+          if (navCta) {
+            navCta.href = iosUrl;
+            navCta.target = '_blank';
+            navCta.rel = 'noopener';
+          }
+        } else if (isAndroid) {
+          if (cardAndroid) cardAndroid.classList.add('is-detected');
+          if (banner) {
+            banner.style.display = 'flex';
+            if (bannerIcon) bannerIcon.textContent = '🤖';
+            if (bannerText) bannerText.innerHTML = 'Thiết bị của bạn: <strong>Android</strong>';
+            if (bannerBtn) {
+              bannerBtn.textContent = 'Mở Google Play tải ngay →';
+              bannerBtn.href = androidUrl;
+            }
+          }
+          if (heroBtn) {
+            heroBtn.innerHTML = '▶ Tải trên Google Play';
+            heroBtn.href = androidUrl;
+            heroBtn.target = '_blank';
+            heroBtn.rel = 'noopener';
+          }
+          if (navCta) {
+            navCta.href = androidUrl;
+            navCta.target = '_blank';
+            navCta.rel = 'noopener';
+          }
+        } else {
+          // Desktop / PC / Laptop
+          if (banner) {
+            banner.style.display = 'flex';
+            if (bannerIcon) bannerIcon.textContent = '💻';
+            if (bannerText) bannerText.innerHTML = 'Quét mã QR bằng camera điện thoại hoặc click trực tiếp để tải:';
+            if (bannerBtn) bannerBtn.style.display = 'none';
+          }
+        }
+      })();
     })();
   </script>
 
